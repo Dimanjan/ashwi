@@ -1,0 +1,72 @@
+# ---- Global ----
+.DS_Store
+*.log
+*.tmp
+*.swp
+*.swo
+.env
+.env.*
+!.env.example
+
+# ---- Python / Django ----
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Django stuff:
+*.sqlite3
+/media/
+/staticfiles/
+staticfiles/
+
+# Migrations cache
+pip-wheel-metadata/
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+.python-version
+
+# Pytest/cache
+.pytest_cache/
+.coverage
+htmlcov/
+,coverage
+.pyre/
+.mypy_cache/
+
+# Byte-compiled / optimized / DLL files
+build/
+dist/
+.eggs/
+*.egg-info/
+
+# IDE/editor
+.vscode/
+.idea/
+*.iml
+
+# ---- Node / React (frontend) ----
+frontend/node_modules/
+frontend/.pnp*
+frontend/pnp.*
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/coverage/
+frontend/build/
+frontend/dist/
+
+# Lock files (optional if you want reproducibility, otherwise keep)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ---- OS ----
+Thumbs.db 
