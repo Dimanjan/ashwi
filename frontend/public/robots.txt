@@ -1,3 +1,20 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Disallow admin or private pages if any
+Disallow: /admin
+Disallow: /api/
+Disallow: /_next/
+
+# Allow all bots to access product and category pages
+Allow: /products
+Allow: /category
+Allow: /subcategory
+Allow: /search
+
+# Sitemap location
+Sitemap: https://ashwi-furniture.com/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1

@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { FunnelIcon, Squares2X2Icon, Bars3Icon } from '@heroicons/react/24/outline';
 import ProductCard from '../components/ProductCard';
-import { productsApi, categoriesApi, subcategoriesApi } from '../services/api';
-import { Product, Category, Subcategory, FilterOptions } from '../types';
+import { productsApi, categoriesApi } from '../services/api';
+import { Product, Category, FilterOptions } from '../types';
+import SEO from '../components/SEO';
 
 const ProductsPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
-  const [subcategories, setSubcategories] = useState<Subcategory[]>([]);
+// const [subcategories, setSubcategories] = useState<Subcategory[]>([]);
   const [loading, setLoading] = useState(true);
   const [totalCount, setTotalCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
@@ -35,12 +36,12 @@ const ProductsPage: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [categoriesData, subcategoriesData] = await Promise.all([
+        const [categoriesData] = await Promise.all([
           categoriesApi.getAll(),
-          subcategoriesApi.getAll(),
+// subcategoriesApi.getAll(),
         ]);
         setCategories(categoriesData);
-        setSubcategories(subcategoriesData);
+// setSubcategories(subcategoriesData);
       } catch (error) {
         console.error('Error fetching categories:', error);
       }
@@ -101,6 +102,16 @@ const ProductsPage: React.FC = () => {
   }
 
   return (
+    <>
+      <SEO
+        title="Shop All Furniture - Quality Home Furniture | Ashwi Furniture"
+        description="Browse our complete collection of premium furniture products for your home. Living room, bedroom, dining room, office & outdoor furniture. Free shipping on orders over $500."
+        keywords="furniture, home furniture, buy furniture online, quality furniture, affordable furniture, furniture store"
+        url="https://ashwi-furniture.com/products"
+        type="website"
+        canonicalUrl="https://ashwi-furniture.com/products"
+      />
+      
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
@@ -345,6 +356,7 @@ const ProductsPage: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
