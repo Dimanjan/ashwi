@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-4 bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition-colors">
               <div className="flex-shrink-0">
                 <img 
-                  src="/sajedar-logo.webp" 
+                  src="/sajedar-logo.png" 
                   alt="Sajedar - AI Agent Builder Agency" 
                   className="h-10 w-auto"
                   loading="lazy"
@@ -167,7 +167,7 @@ const Footer: React.FC = () => {
               title="Visit Sajedar - AI Agent Builder Agency"
             >
               <img 
-                src="/sajedar-logo.webp" 
+                src="/sajedar-logo.png" 
                 alt="Sajedar Logo" 
                 className="h-6 w-auto"
                 loading="lazy"
