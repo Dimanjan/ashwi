@@ -10,11 +10,21 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">A</span>
+            <div className="flex items-center space-x-3 mb-4">
+              <picture>
+                <source srcSet="/ashwi-logo-white.webp" type="image/webp" />
+                <img 
+                  src="/ashwi-logo-white.png" 
+                  alt="Ashwi Furniture" 
+                  className="h-12 w-auto object-contain"
+                  width="52"
+                  height="44"
+                />
+              </picture>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold tracking-tight text-white leading-none">Ashwi Furniture</span>
+                <span className="text-xs text-gray-400 mt-1">Kathmandu, Nepal</span>
               </div>
-              <span className="text-xl font-bold">Ashwi Furniture</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
               We offer beautiful furniture with high finishing. We take payment only after delivery.

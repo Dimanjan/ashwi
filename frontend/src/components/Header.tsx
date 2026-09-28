@@ -65,11 +65,21 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">A</span>
+          <Link to="/" className="flex items-center space-x-2.5 group py-1">
+            <picture>
+              <source srcSet="/ashwi-logo-transparent.webp" type="image/webp" />
+              <img 
+                src="/ashwi-logo-transparent.png" 
+                alt="Ashwi Furniture" 
+                className="h-10 md:h-11 w-auto object-contain transition-transform group-hover:scale-105"
+                width="48"
+                height="40"
+              />
+            </picture>
+            <div className="flex flex-col">
+              <span className="text-xl font-extrabold text-gray-900 tracking-tight leading-none">Ashwi</span>
+              <span className="text-[10px] tracking-widest uppercase font-semibold text-primary-600 leading-tight">Furniture</span>
             </div>
-            <span className="text-xl font-bold text-gray-900">Ashwi Furniture</span>
           </Link>
 
           {/* Desktop Navigation */}
