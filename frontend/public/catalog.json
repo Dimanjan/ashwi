@@ -1,0 +1,681 @@
+{
+  "store": {
+    "name": "Ashwi Furniture",
+    "location": "Kathmandu, Nepal",
+    "contact": {
+      "phone": "+977-986-0479751",
+      "whatsapp": "https://wa.me/9779860479751",
+      "email": "info@ashwifurniture.com.np",
+      "website": "https://www.ashwifurniture.com"
+    },
+    "policy": {
+      "payment": "100% Payment After Delivery. Cash on Delivery (COD), Fonepay QR, Bank Transfer.",
+      "delivery": "Free delivery and white-glove assembly across Kathmandu Valley (Kathmandu, Lalitpur, Bhaktapur).",
+      "warranty": "5 to 10 years structural warranty on solid hardwood frames."
+    }
+  },
+  "products": [
+    {
+      "name": "Luxury Bubble Curved Sofa",
+      "slug": "luxury-bubble-curved-sofa",
+      "sku": "ASHWI-BUBBLE-01",
+      "category": "Living Room",
+      "subcategory": "Sofas",
+      "price_npr": 95000,
+      "sale_price_npr": 82000,
+      "dimensions": {
+        "length_inches": 230,
+        "width_inches": 95,
+        "height_inches": 78
+      },
+      "material": "fabric",
+      "finish": "matte",
+      "color": "Cream White",
+      "in_stock": true,
+      "features": [
+        "Sculptural curved organic design",
+        "High-resilience foam core with pocket spring support",
+        "Stain-resistant luxury boucle fabric",
+        "Solid kiln-dried hardwood internal frame",
+        "Pay only after delivery anywhere in Kathmandu Valley"
+      ],
+      "url": "https://www.ashwifurniture.com/products/luxury-bubble-curved-sofa",
+      "image_url": "https://www.ashwifurniture.com/bubblesofa.png"
+    },
+    {
+      "name": "Royal Tufted Chesterfield Sofa",
+      "slug": "royal-tufted-chesterfield-sofa",
+      "sku": "ASHWI-TUFT-02",
+      "category": "Living Room",
+      "subcategory": "Sofas",
+      "price_npr": 88000,
+      "sale_price_npr": 76000,
+      "dimensions": {
+        "length_inches": 220,
+        "width_inches": 90,
+        "height_inches": 80
+      },
+      "material": "fabric",
+      "finish": "polished",
+      "color": "Deep Teal / Gray",
+      "in_stock": true,
+      "features": [
+        "Hand-crafted deep diamond tufting",
+        "Solid turned wood legs with brass castor accents",
+        "Ultra-soft heavy duty velvet fabric",
+        "High-grade pocket spring seating suspension"
+      ],
+      "url": "https://www.ashwifurniture.com/products/royal-tufted-chesterfield-sofa",
+      "image_url": "https://www.ashwifurniture.com/tuftedsofa.png"
+    },
+    {
+      "name": "Cloud Modular Sectional Sofa",
+      "slug": "cloud-modular-sectional-sofa",
+      "sku": "ASHWI-CLOUD-03",
+      "category": "Living Room",
+      "subcategory": "Sofas",
+      "price_npr": 115000,
+      "sale_price_npr": 98000,
+      "dimensions": {
+        "length_inches": 260,
+        "width_inches": 105,
+        "height_inches": 82
+      },
+      "material": "fabric",
+      "finish": "matte",
+      "color": "Pure White / Oatmeal",
+      "in_stock": true,
+      "features": [
+        "Sink-in softness with multi-layer high resilience foam",
+        "Removable washable slipcovers",
+        "Extra-wide 105cm deep lounge seating",
+        "Corner-blocked reinforced hardwood frame"
+      ],
+      "url": "https://www.ashwifurniture.com/products/cloud-modular-sectional-sofa",
+      "image_url": "https://www.ashwifurniture.com/cloudsofa.png"
+    },
+    {
+      "name": "Cocoon Ergonomic Curved Sofa",
+      "slug": "cocoon-ergonomic-curved-sofa",
+      "sku": "ASHWI-COCOON-04",
+      "category": "Living Room",
+      "subcategory": "Sofas",
+      "price_npr": 85000,
+      "sale_price_npr": 74000,
+      "dimensions": {
+        "length_inches": 215,
+        "width_inches": 88,
+        "height_inches": 76
+      },
+      "material": "fabric",
+      "finish": "matte",
+      "color": "Sand Beige",
+      "in_stock": true,
+      "features": [
+        "Sculpted continuous backrest and arm contour",
+        "Ultra-dense orthopedically supportive foam",
+        "Textured designer fabric"
+      ],
+      "url": "https://www.ashwifurniture.com/products/cocoon-ergonomic-curved-sofa",
+      "image_url": "https://www.ashwifurniture.com/cocoonsofa.png"
+    },
+    {
+      "name": "Echo Minimalist Low-Profile Sofa",
+      "slug": "echo-minimalist-low-profile-sofa",
+      "sku": "ASHWI-ECHO-05",
+      "category": "Living Room",
+      "subcategory": "Sofas",
+      "price_npr": 72000,
+      "sale_price_npr": 64000,
+      "dimensions": {
+        "length_inches": 205,
+        "width_inches": 85,
+        "height_inches": 72
+      },
+      "material": "fabric",
+      "finish": "matte",
+      "color": "Slate Gray",
+      "in_stock": true,
+      "features": [
+        "Minimalist low-profile Japandi silhouette",
+        "Dual layer high-resilience foam",
+        "Compact footprint perfect for modern Kathmandu apartments"
+      ],
+      "url": "https://www.ashwifurniture.com/products/echo-minimalist-low-profile-sofa",
+      "image_url": "https://www.ashwifurniture.com/echosofa.png"
+    },
+    {
+      "name": "Butterfly Iconic Modern Lounge Chair",
+      "slug": "butterfly-iconic-modern-lounge-chair",
+      "sku": "ASHWI-BFLY-06",
+      "category": "Living Room",
+      "subcategory": "Armchairs",
+      "price_npr": 38000,
+      "sale_price_npr": 32000,
+      "dimensions": {
+        "length_inches": 85,
+        "width_inches": 82,
+        "height_inches": 98
+      },
+      "material": "mixed",
+      "finish": "polished",
+      "color": "Mustard / Emerald / Ivory",
+      "in_stock": true,
+      "features": [
+        "Ergonomic wing contour for full back support",
+        "Reinforced steel & wood hybrid inner frame",
+        "Durable stain-resistant designer velvet upholstery"
+      ],
+      "url": "https://www.ashwifurniture.com/products/butterfly-iconic-modern-lounge-chair",
+      "image_url": "https://www.ashwifurniture.com/butterflysofa1.png"
+    },
+    {
+      "name": "Cuddle Nest Swivel Armchair",
+      "slug": "cuddle-nest-swivel-armchair",
+      "sku": "ASHWI-NEST-07",
+      "category": "Living Room",
+      "subcategory": "Armchairs",
+      "price_npr": 42000,
+      "sale_price_npr": 36000,
+      "dimensions": {
+        "length_inches": 92,
+        "width_inches": 90,
+        "height_inches": 75
+      },
+      "material": "fabric",
+      "finish": "matte",
+      "color": "Warm Oatmeal",
+      "in_stock": true,
+      "features": [
+        "Smooth 360-degree heavy duty steel swivel mechanism",
+        "Wrap-around barrel nest comfort",
+        "Premium plush texture fabric"
+      ],
+      "url": "https://www.ashwifurniture.com/products/cuddle-nest-swivel-armchair",
+      "image_url": "https://www.ashwifurniture.com/cuddlenestarmchair.png"
+    },
+    {
+      "name": "Pokemon Cozy Lounge Accent Chair",
+      "slug": "pokemon-cozy-lounge-accent-chair",
+      "sku": "ASHWI-POKE-08",
+      "category": "Living Room",
+      "subcategory": "Armchairs",
+      "price_npr": 28000,
+      "sale_price_npr": 24000,
+      "dimensions": {
+        "length_inches": 75,
+        "width_inches": 75,
+        "height_inches": 70
+      },
+      "material": "fabric",
+      "finish": "matte",
+      "color": "Vibrant Yellow / Multi",
+      "in_stock": true,
+      "features": [
+        "Playful character design loved by all ages",
+        "Child-safe rounded edges with zero sharp hardware",
+        "Super-soft hypoallergenic plush upholstery"
+      ],
+      "url": "https://www.ashwifurniture.com/products/pokemon-cozy-lounge-accent-chair",
+      "image_url": "https://www.ashwifurniture.com/pokemonarmchair.png"
+    },
+    {
+      "name": "Executive High Back Wing Chair",
+      "slug": "executive-high-back-wing-chair",
+      "sku": "ASHWI-HIGH-09",
+      "category": "Living Room",
+      "subcategory": "Armchairs",
+      "price_npr": 45000,
+      "sale_price_npr": 39000,
+      "dimensions": {
+        "length_inches": 88,
+        "width_inches": 82,
+        "height_inches": 110
+      },
+      "material": "mixed",
+      "finish": "polished",
+      "color": "Charcoal Gray",
+      "in_stock": true,
+      "features": [
+        "Full height 110cm orthopedic back support",
+        "Solid hardwood tapered legs",
+        "Heavy-duty commercial grade upholstery"
+      ],
+      "url": "https://www.ashwifurniture.com/products/executive-high-back-wing-chair",
+      "image_url": "https://www.ashwifurniture.com/highbackchair.png"
+    },
+    {
+      "name": "Modern Velvet Accent Ottoman",
+      "slug": "modern-velvet-accent-ottoman",
+      "sku": "ASHWI-OTTO-10",
+      "category": "Living Room",
+      "subcategory": "Beds",
+      "price_npr": 18000,
+      "sale_price_npr": 14500,
+      "dimensions": {
+        "length_inches": 60,
+        "width_inches": 60,
+        "height_inches": 42
+      },
+      "material": "mixed",
+      "finish": "glossy",
+      "color": "Emerald Green / Blush Pink",
+      "in_stock": true,
+      "features": [
+        "Brushed metallic gold accent plinth base",
+        "Dual use as coffee stool or footrest",
+        "Dense shape-holding foam interior"
+      ],
+      "url": "https://www.ashwifurniture.com/products/modern-velvet-accent-ottoman",
+      "image_url": "https://www.ashwifurniture.com/ottoman.png"
+    },
+    {
+      "name": "Cushioned End-of-Bed Ottoman Bench",
+      "slug": "cushioned-end-of-bed-ottoman-bench",
+      "sku": "ASHWI-BENCH-11",
+      "category": "Bedroom",
+      "subcategory": "Beds",
+      "price_npr": 26000,
+      "sale_price_npr": 22000,
+      "dimensions": {
+        "length_inches": 130,
+        "width_inches": 45,
+        "height_inches": 48
+      },
+      "material": "wood",
+      "finish": "natural",
+      "color": "Ivory Boucle / Natural Wood",
+      "in_stock": true,
+      "features": [
+        "Comfortable 130cm seating width",
+        "Solid wood structural legs with floor protectors",
+        "Pairs perfectly with king and queen beds"
+      ],
+      "url": "https://www.ashwifurniture.com/products/cushioned-end-of-bed-ottoman-bench",
+      "image_url": "https://www.ashwifurniture.com/bedbench.png"
+    },
+    {
+      "name": "Heritage Solid Wood King Bed",
+      "slug": "heritage-solid-wood-king-bed",
+      "sku": "ASHWI-BED-12",
+      "category": "Bedroom",
+      "subcategory": "Bed Benches",
+      "price_npr": 75000,
+      "sale_price_npr": 68000,
+      "dimensions": {
+        "length_inches": 210,
+        "width_inches": 190,
+        "height_inches": 100
+      },
+      "material": "wood",
+      "finish": "stained",
+      "color": "Walnut Brown",
+      "in_stock": true,
+      "features": [
+        "100% seasoned solid timber construction",
+        "Heavy-duty solid cross-beam support (no squeaks guaranteed)",
+        "Smooth hand-sanded satin polyurethane seal",
+        "Includes solid wooden slat system"
+      ],
+      "url": "https://www.ashwifurniture.com/products/heritage-solid-wood-king-bed",
+      "image_url": "https://www.ashwifurniture.com/bed.jpeg"
+    },
+    {
+      "name": "Smart Hydraulic Lift Storage Bed",
+      "slug": "smart-hydraulic-lift-storage-bed",
+      "sku": "ASHWI-BED-13",
+      "category": "Bedroom",
+      "subcategory": "Bed Benches",
+      "price_npr": 89000,
+      "sale_price_npr": 79000,
+      "dimensions": {
+        "length_inches": 215,
+        "width_inches": 185,
+        "height_inches": 105
+      },
+      "material": "mixed",
+      "finish": "matte",
+      "color": "Warm Walnut & Gray Cushion",
+      "in_stock": true,
+      "features": [
+        "Effortless gas-strut hydraulic lift mechanism",
+        "Over 900 liters of dust-sealed under-bed storage",
+        "Padded cushioned headboard for comfortable reading",
+        "Sturdy steel inner lifting frame"
+      ],
+      "url": "https://www.ashwifurniture.com/products/smart-hydraulic-lift-storage-bed",
+      "image_url": "https://www.ashwifurniture.com/bed_with_storage.jpeg"
+    },
+    {
+      "name": "Classic 3-Door Wooden Wardrobe (Daraz)",
+      "slug": "classic-3-door-wooden-wardrobe-daraz",
+      "sku": "ASHWI-DRZ-14",
+      "category": "Bedroom",
+      "subcategory": "Wardrobes (Daraz)",
+      "price_npr": 68000,
+      "sale_price_npr": 59000,
+      "dimensions": {
+        "length_inches": 150,
+        "width_inches": 60,
+        "height_inches": 200
+      },
+      "material": "wood",
+      "finish": "stained",
+      "color": "Teak Walnut Finish",
+      "in_stock": true,
+      "features": [
+        "Multi-compartment organizer: hanging rails + 5 shelves",
+        "Dual lockable inner security drawers with keys",
+        "Anti-termite treated engineered hardwood construction",
+        "Smooth soft-closing hydraulic door hinges"
+      ],
+      "url": "https://www.ashwifurniture.com/products/classic-3-door-wooden-wardrobe-daraz",
+      "image_url": "https://www.ashwifurniture.com/daraz.jpeg"
+    },
+    {
+      "name": "Executive Wardrobe with Integrated Dressing Mirror",
+      "slug": "executive-wardrobe-with-integrated-dressing-mirror",
+      "sku": "ASHWI-DRZ-15",
+      "category": "Bedroom",
+      "subcategory": "Wardrobes (Daraz)",
+      "price_npr": 78000,
+      "sale_price_npr": 69000,
+      "dimensions": {
+        "length_inches": 180,
+        "width_inches": 60,
+        "height_inches": 205
+      },
+      "material": "mixed",
+      "finish": "glossy",
+      "color": "Walnut & Frost White",
+      "in_stock": true,
+      "features": [
+        "Full-length 5mm bevelled edge silver glass dressing mirror",
+        "Built-in vanity shelf with partitioned makeup drawers",
+        "Spacious hanger wardrobe & overhead luggage loft"
+      ],
+      "url": "https://www.ashwifurniture.com/products/executive-wardrobe-with-integrated-dressing-mirror",
+      "image_url": "https://www.ashwifurniture.com/daraj_with_dressing.jpeg"
+    },
+    {
+      "name": "Contemporary Vanity Dressing Table",
+      "slug": "contemporary-vanity-dressing-table",
+      "sku": "ASHWI-DRS-16",
+      "category": "Bedroom",
+      "subcategory": "Dressing Tables",
+      "price_npr": 34000,
+      "sale_price_npr": 29000,
+      "dimensions": {
+        "length_inches": 100,
+        "width_inches": 45,
+        "height_inches": 140
+      },
+      "material": "wood",
+      "finish": "polished",
+      "color": "Warm Wood / White Accent",
+      "in_stock": true,
+      "features": [
+        "High-clarity bevelled vanity mirror",
+        "Smooth telescopic ball-bearing drawer sliders",
+        "Includes matching padded vanity stool",
+        "Compact footprint suitable for any bedroom"
+      ],
+      "url": "https://www.ashwifurniture.com/products/contemporary-vanity-dressing-table",
+      "image_url": "https://www.ashwifurniture.com/dressing_table.jpg"
+    },
+    {
+      "name": "Multi-Tier Wooden Entryway Shoe Rack",
+      "slug": "multi-tier-wooden-entryway-shoe-rack",
+      "sku": "ASHWI-SHOE-17",
+      "category": "Bedroom",
+      "subcategory": "Dining Tables",
+      "price_npr": 16000,
+      "sale_price_npr": 13500,
+      "dimensions": {
+        "length_inches": 80,
+        "width_inches": 32,
+        "height_inches": 90
+      },
+      "material": "wood",
+      "finish": "natural",
+      "color": "Natural Honey Teak",
+      "in_stock": true,
+      "features": [
+        "Holds up to 16-20 pairs of shoes",
+        "Ventilated slatted shelves for fresh airflow",
+        "Sturdy solid wood top shelf for keys and decor"
+      ],
+      "url": "https://www.ashwifurniture.com/products/multi-tier-wooden-entryway-shoe-rack",
+      "image_url": "https://www.ashwifurniture.com/shoe_rack.jpeg"
+    },
+    {
+      "name": "Shoe Rack Entryway Bench with Cushion Top",
+      "slug": "shoe-rack-entryway-bench-with-cushion-top",
+      "sku": "ASHWI-SHOE-18",
+      "category": "Bedroom",
+      "subcategory": "Dining Tables",
+      "price_npr": 22000,
+      "sale_price_npr": 18500,
+      "dimensions": {
+        "length_inches": 95,
+        "width_inches": 35,
+        "height_inches": 48
+      },
+      "material": "mixed",
+      "finish": "stained",
+      "color": "Walnut Wood & Charcoal Cushion",
+      "in_stock": true,
+      "features": [
+        "Comfortable high-density foam seat cushion",
+        "Solid wood frame supports up to 180 kg seated weight",
+        "Dual bottom shoe storage compartments"
+      ],
+      "url": "https://www.ashwifurniture.com/products/shoe-rack-entryway-bench-with-cushion-top",
+      "image_url": "https://www.ashwifurniture.com/shoe_rack_with_tops.jpeg"
+    },
+    {
+      "name": "Minimalist Solid Wood Center Tea Table",
+      "slug": "minimalist-solid-wood-center-tea-table",
+      "sku": "ASHWI-TEA-19",
+      "category": "Living Room",
+      "subcategory": "Ottomans",
+      "price_npr": 24000,
+      "sale_price_npr": 19500,
+      "dimensions": {
+        "length_inches": 110,
+        "width_inches": 55,
+        "height_inches": 45
+      },
+      "material": "wood",
+      "finish": "natural",
+      "color": "Natural Teak Wood",
+      "in_stock": true,
+      "features": [
+        "100% solid timber construction",
+        "Waterproof heat-resistant polyurethane clear coat",
+        "Bevelled child-friendly rounded edges"
+      ],
+      "url": "https://www.ashwifurniture.com/products/minimalist-solid-wood-center-tea-table",
+      "image_url": "https://www.ashwifurniture.com/tea_table.jpeg"
+    },
+    {
+      "name": "Modern Coffee Table with Lower Storage Rack",
+      "slug": "modern-coffee-table-with-lower-storage-rack",
+      "sku": "ASHWI-TEA-20",
+      "category": "Living Room",
+      "subcategory": "Ottomans",
+      "price_npr": 28000,
+      "sale_price_npr": 23000,
+      "dimensions": {
+        "length_inches": 120,
+        "width_inches": 60,
+        "height_inches": 46
+      },
+      "material": "wood",
+      "finish": "stained",
+      "color": "Rich Walnut",
+      "in_stock": true,
+      "features": [
+        "Dual-level storage for tidy living room",
+        "Reinforced cross-braced solid legs",
+        "Scratch and water resistant protective polish"
+      ],
+      "url": "https://www.ashwifurniture.com/products/modern-coffee-table-with-lower-storage-rack",
+      "image_url": "https://www.ashwifurniture.com/tea_table_with_rack.jpeg"
+    },
+    {
+      "name": "Contemporary Double-Deck Geometric Tea Table",
+      "slug": "contemporary-double-deck-geometric-tea-table",
+      "sku": "ASHWI-TEA-21",
+      "category": "Living Room",
+      "subcategory": "Ottomans",
+      "price_npr": 31000,
+      "sale_price_npr": 26000,
+      "dimensions": {
+        "length_inches": 120,
+        "width_inches": 65,
+        "height_inches": 48
+      },
+      "material": "wood",
+      "finish": "stained",
+      "color": "Dark Walnut Finish",
+      "in_stock": true,
+      "features": [
+        "Geometric architectural pillar structure",
+        "Generous surface area for entertaining guests",
+        "Solid heavy-base stability"
+      ],
+      "url": "https://www.ashwifurniture.com/products/contemporary-double-deck-geometric-tea-table",
+      "image_url": "https://www.ashwifurniture.com/tea_table_with_rack_2.jpeg"
+    },
+    {
+      "name": "Handcrafted Sacred Wooden Home Mandir",
+      "slug": "handcrafted-sacred-wooden-home-mandir",
+      "sku": "ASHWI-MNDR-22",
+      "category": "Sacred Mandirs",
+      "subcategory": "Wooden Mandirs",
+      "price_npr": 48000,
+      "sale_price_npr": 42000,
+      "dimensions": {
+        "length_inches": 75,
+        "width_inches": 50,
+        "height_inches": 125
+      },
+      "material": "wood",
+      "finish": "stained",
+      "color": "Teak Gold Antique Stained",
+      "in_stock": true,
+      "features": [
+        "Traditional hand-carved dome and pillars",
+        "Pull-out incense and diya burner tray",
+        "Dual drawers with brass bell handles for samagri storage",
+        "Treated against moisture and insect damage"
+      ],
+      "url": "https://www.ashwifurniture.com/products/handcrafted-sacred-wooden-home-mandir",
+      "image_url": "https://www.ashwifurniture.com/mandir_alone.png"
+    },
+    {
+      "name": "Grand Family Puja Mandir with Storage Cabinet",
+      "slug": "grand-family-puja-mandir-with-storage-cabinet",
+      "sku": "ASHWI-MNDR-23",
+      "category": "Sacred Mandirs",
+      "subcategory": "Wooden Mandirs",
+      "price_npr": 72000,
+      "sale_price_npr": 64000,
+      "dimensions": {
+        "length_inches": 105,
+        "width_inches": 55,
+        "height_inches": 165
+      },
+      "material": "wood",
+      "finish": "polished",
+      "color": "Heritage Mahogany",
+      "in_stock": true,
+      "features": [
+        "Expansive sanctum suitable for large deity idols",
+        "Lower double-door cabinet for utensils and books",
+        "Integrated brass hanging bells and diya tray",
+        "Solid base designed for lifetime devotional use"
+      ],
+      "url": "https://www.ashwifurniture.com/products/grand-family-puja-mandir-with-storage-cabinet",
+      "image_url": "https://www.ashwifurniture.com/mandir_family_praying.png"
+    },
+    {
+      "name": "Solid Wood Extendable Dining Table",
+      "slug": "solid-wood-extendable-dining-table",
+      "sku": "ASHWI-DINE-24",
+      "category": "Dining Room",
+      "subcategory": "Coffee Tables",
+      "price_npr": 72000,
+      "sale_price_npr": 64000,
+      "dimensions": {
+        "length_inches": 180,
+        "width_inches": 90,
+        "height_inches": 75
+      },
+      "material": "wood",
+      "finish": "stained",
+      "color": "Walnut Finish",
+      "in_stock": true,
+      "features": [
+        "Concealed butterfly leaf extension (extends to 220cm)",
+        "Seats 6-8 people comfortably",
+        "Food-safe stain and scratch resistant seal",
+        "Sturdy solid timber legs"
+      ],
+      "url": "https://www.ashwifurniture.com/products/solid-wood-extendable-dining-table",
+      "image_url": "https://www.ashwifurniture.com/tea_table_with_rack_2.jpeg"
+    },
+    {
+      "name": "Executive L-Shaped Office Desk",
+      "slug": "executive-l-shaped-office-desk",
+      "sku": "ASHWI-OFC-25",
+      "category": "Office",
+      "subcategory": "Shoe Racks",
+      "price_npr": 42000,
+      "sale_price_npr": 36000,
+      "dimensions": {
+        "length_inches": 150,
+        "width_inches": 120,
+        "height_inches": 75
+      },
+      "material": "mixed",
+      "finish": "matte",
+      "color": "Warm Teak & Black Frame",
+      "in_stock": true,
+      "features": [
+        "L-shaped corner layout maximizes floor space",
+        "Dual cable management pass-through grommets",
+        "Integrated lockable 3-drawer storage pedestal"
+      ],
+      "url": "https://www.ashwifurniture.com/products/executive-l-shaped-office-desk",
+      "image_url": "https://www.ashwifurniture.com/tea_table.jpeg"
+    },
+    {
+      "name": "All-Weather Wicker Patio Lounge Set",
+      "slug": "all-weather-wicker-patio-lounge-set",
+      "sku": "ASHWI-OUT-26",
+      "category": "Outdoor",
+      "subcategory": "Wooden Mandirs",
+      "price_npr": 58000,
+      "sale_price_npr": 49000,
+      "dimensions": {
+        "length_inches": 120,
+        "width_inches": 120,
+        "height_inches": 75
+      },
+      "material": "mixed",
+      "finish": "natural",
+      "color": "Weathered Grey / Beige Cushions",
+      "in_stock": true,
+      "features": [
+        "UV-treated fade-resistant synthetic wicker",
+        "Rust-proof aluminum structural frames",
+        "Tempered safety glass tabletop",
+        "Water-repellent washable cushion covers"
+      ],
+      "url": "https://www.ashwifurniture.com/products/all-weather-wicker-patio-lounge-set",
+      "image_url": "https://www.ashwifurniture.com/butterflysofa1.png"
+    }
+  ]
+}

@@ -27,6 +27,34 @@ export const generateOrganizationSchema = () => {
     currenciesAccepted: 'NPR',
     paymentAccepted: 'Cash on Delivery, Fonepay, Bank Transfer',
     priceRange: 'रुरु',
+    sameAs: [
+      'https://www.facebook.com/profile.php?id=61579049243889',
+      'https://www.instagram.com/ashwifurniture',
+      'https://wa.me/9779860479751',
+      'https://www.ashwifurniture.com'
+    ],
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Kathmandu',
+        sameAs: 'https://www.wikidata.org/wiki/Q1080'
+      },
+      {
+        '@type': 'City',
+        name: 'Lalitpur',
+        sameAs: 'https://www.wikidata.org/wiki/Q38789'
+      },
+      {
+        '@type': 'City',
+        name: 'Bhaktapur',
+        sameAs: 'https://www.wikidata.org/wiki/Q2516'
+      },
+      {
+        '@type': 'Country',
+        name: 'Nepal',
+        sameAs: 'https://www.wikidata.org/wiki/Q837'
+      }
+    ],
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -65,6 +93,43 @@ export const generateProductSchema = (product: Product) => {
       seller: {
         '@type': 'Organization',
         name: 'Ashwi Furniture',
+        url: 'https://www.ashwifurniture.com',
+      },
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: 'NP',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        merchantReturnDays: 7,
+        returnMethod: 'https://schema.org/ReturnAtKiosk',
+        returnFees: 'https://schema.org/FreeReturn',
+      },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingRate: {
+          '@type': 'MonetaryAmount',
+          value: '0',
+          currency: 'NPR',
+        },
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: 'NP',
+          addressRegion: 'Kathmandu Valley',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 1,
+            unitCode: 'd',
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 1,
+            maxValue: 3,
+            unitCode: 'd',
+          },
+        },
       },
     },
     aggregateRating: product.review_count > 0 ? {

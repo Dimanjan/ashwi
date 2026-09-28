@@ -50,23 +50,31 @@ const HomePage: React.FC = () => {
     );
   }
 
-  // Structured data for home page
+  // Structured data for home page and visible FAQ section
   const faqs = [
     {
-      question: 'Where is Ashwi Furniture located in Nepal?',
-      answer: 'Ashwi Furniture is located in Kathmandu, Nepal, offering home delivery across Kathmandu Valley and shipping across all provinces of Nepal.'
+      question: 'Where is Ashwi Furniture located and where do you deliver in Nepal?',
+      answer: 'Ashwi Furniture is based in Kathmandu, Nepal. We provide free doorstep delivery and installation across the entire Kathmandu Valley (Kathmandu, Lalitpur, and Bhaktapur) and safe transport across all major cities in Nepal.'
     },
     {
-      question: 'What is the payment policy at Ashwi Furniture?',
-      answer: 'We take payment only after delivery! You can inspect your furniture upon delivery and pay via Cash on Delivery, Fonepay, or bank transfer.'
+      question: 'How does payment work at Ashwi Furniture?',
+      answer: 'We operate on a 100% Payment After Delivery model! You do not pay advance money for standard catalog items. You only pay after our delivery team brings your furniture to your home and you inspect its quality and finishing. We accept Cash on Delivery, Fonepay QR, and bank transfers.'
     },
     {
-      question: 'Do you offer custom furniture design?',
-      answer: 'Yes, we customize sofas, beds, wardrobes (daraz), dining tables, and wooden mandirs according to your preferred dimensions, timber type, and fabric.'
+      question: 'How do I place an order or inquire about furniture?',
+      answer: 'You can order directly through our website, call us directly at 9860479751, or message us on WhatsApp at +977-986-0479751. Our team responds promptly with fabric swatches, dimension options, and delivery schedules.'
     },
     {
-      question: 'Is there a warranty on your furniture?',
-      answer: 'Yes, all our solid wood and framed furniture pieces come with a 5 to 10 year structural warranty against defects.'
+      question: 'Can I customize dimensions, fabric, and wood finishes?',
+      answer: 'Yes! All Ashwi Furniture products—including curved bubble sofas, modern platform beds, storage wardrobes (daraz), dining tables, and wooden temples (mandirs)—can be customized to fit your exact room measurements and interior color palette.'
+    },
+    {
+      question: 'What materials and warranties are provided?',
+      answer: 'We craft our furniture using seasoned solid Sal wood, engineered hardwood, high-density memory foam, and premium stain-resistant fabrics. All solid frame furniture includes a 5 to 10-year structural warranty.'
+    },
+    {
+      question: 'What if I am not satisfied with the furniture upon delivery?',
+      answer: 'Because of our payment-after-delivery guarantee, if a delivered item does not match your expectations during delivery inspection, you are under no obligation to keep or pay for it. Customer satisfaction is our top priority.'
     }
   ];
 
@@ -261,6 +269,58 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
+        {/* Frequently Asked Questions (GEO & SEO Optimized) */}
+        <section className="py-16 bg-gray-50 border-t border-gray-100">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="text-xs uppercase tracking-widest text-primary-600 font-bold bg-primary-50 px-3 py-1 rounded-full border border-primary-100">
+                Help & Information
+              </span>
+              <h2 className="text-3xl font-extrabold text-gray-900 mt-3 mb-4">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Everything you need to know about ordering handcrafted furniture in Kathmandu with payment after delivery.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {faqs.map((faq, idx) => (
+                <article key={idx} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2.5 flex items-start gap-2">
+                    <span className="text-primary-600 text-xl font-black">Q.</span>
+                    <span>{faq.question}</span>
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed pl-6">
+                    {faq.answer}
+                  </p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-10 text-center bg-primary-50 rounded-2xl p-6 border border-primary-100">
+              <p className="text-gray-800 font-medium text-sm">
+                Have more questions or need immediate customization assistance?
+              </p>
+              <div className="mt-3 flex items-center justify-center gap-4">
+                <a
+                  href="tel:+9779860479751"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors shadow-sm"
+                >
+                  <span>📞 Call: 9860479751</span>
+                </a>
+                <a
+                  href="https://wa.me/9779860479751"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors shadow-sm"
+                >
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* CTA Section */}
         <section className="py-16 bg-primary-600 text-white">

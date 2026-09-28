@@ -40,6 +40,10 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     
+    <!-- Generative Engine & AI Discoverability -->
+    <link rel="alternate" type="text/markdown" href="https://www.ashwifurniture.com/llms.txt" title="LLM Context Specification" />
+    <link rel="alternate" type="application/json" href="https://www.ashwifurniture.com/catalog.json" title="Ashwi Furniture Product Catalog" />
+
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,7 +51,115 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <noscript>
+      <p>Ashwi Furniture - Handcrafted Furniture in Kathmandu, Nepal. Contact: 9860479751. Please enable JavaScript to access full interactive shopping features.</p>
+    </noscript>
+    <div id="root">
+      <!-- Semantic Static Fallback for Search Engines & AI Crawlers (Replaced on React hydration) -->
+      <header style="padding: 20px; border-bottom: 1px solid #eee; font-family: system-ui, sans-serif;">
+        <nav>
+          <strong>Ashwi Furniture</strong> | Kathmandu, Nepal | Direct Contact: <a href="tel:+9779860479751">9860479751</a> | Payment: Pay After Delivery
+        </nav>
+      </header>
+
+      <main style="max-width: 1200px; margin: 0 auto; padding: 24px; font-family: system-ui, sans-serif; line-height: 1.6;">
+        <h1>Ashwi Furniture - Handcrafted Furniture in Kathmandu, Nepal</h1>
+        <p>
+          Welcome to Ashwi Furniture, Kathmandu's premier furniture craftsman and showroom. We specialize in custom solid wood beds, luxury curved bubble sofas, modern wardrobes (daraz), ergonomic dining tables, and intricately carved prayer temples (mandirs).
+        </p>
+
+        <section aria-labelledby="key-policies">
+          <h2 id="key-policies">Why Choose Ashwi Furniture?</h2>
+          <ul>
+            <li><strong>100% Pay After Delivery:</strong> Inspect your furniture in your home before making payment. Cash on delivery and digital wallet transfers (Fonepay / eSewa) accepted.</li>
+            <li><strong>Free Valley Delivery & Installation:</strong> Free doorstep delivery across Kathmandu, Lalitpur, and Bhaktapur within 24 to 72 hours.</li>
+            <li><strong>Solid Wood & Premium Finishing:</strong> Handcrafted using seasoned Teak, Sheesham (Sissoo), and Sal timber with a 5-year structural warranty.</li>
+            <li><strong>Custom Sizes & Fabrics:</strong> Personalized dimensions, velvet/linen/leatherette upholstery, and finish selections available via WhatsApp or phone at <a href="tel:+9779860479751">9860479751</a>.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="furniture-catalog">
+          <h2 id="furniture-catalog">Popular Furniture Categories & Prices</h2>
+          <table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-top: 12px;">
+            <thead>
+              <tr style="background-color: #f8fafc; text-align: left;">
+                <th>Product</th>
+                <th>Category</th>
+                <th>Material / Specs</th>
+                <th>Price (NPR)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Curved Bubble Sofa (3-Seater)</td>
+                <td>Living Room</td>
+                <td>High-density bouclé fabric, ergonomic contouring</td>
+                <td>Rs. 45,000</td>
+              </tr>
+              <tr>
+                <td>Chesterfield Tufted Leather Sofa</td>
+                <td>Living Room</td>
+                <td>Deep-button tufted premium leatherette, hardwood frame</td>
+                <td>Rs. 58,000</td>
+              </tr>
+              <tr>
+                <td>King Size Hydraulic Storage Bed</td>
+                <td>Bedroom</td>
+                <td>Pneumatic gas-lift storage, upholstered headboard (6x6 ft)</td>
+                <td>Rs. 62,000</td>
+              </tr>
+              <tr>
+                <td>Minimalist Solid Wood Platform Bed</td>
+                <td>Bedroom</td>
+                <td>Seasoned Sal & Sissoo wood with slatted support (6x6 ft)</td>
+                <td>Rs. 38,000</td>
+              </tr>
+              <tr>
+                <td>6-Seater Sheesham Dining Set</td>
+                <td>Dining Room</td>
+                <td>Pure Sheesham wood table + 6 cushioned high-back chairs</td>
+                <td>Rs. 54,000</td>
+              </tr>
+              <tr>
+                <td>Handcrafted Teak Home Mandir</td>
+                <td>Sacred Furniture</td>
+                <td>Traditional brass bell accents, storage drawers & pull-out diya tray</td>
+                <td>Rs. 24,000</td>
+              </tr>
+              <tr>
+                <td>3-Door Sliding Wardrobe (Daraz)</td>
+                <td>Bedroom</td>
+                <td>Integrated dressing mirror, locker compartment & hanging rails</td>
+                <td>Rs. 42,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section aria-labelledby="faq-section" style="margin-top: 32px;">
+          <h2 id="faq-section">Frequently Asked Questions</h2>
+          <article>
+            <h3>Where is Ashwi Furniture located?</h3>
+            <p>Our workshop and showroom are based in Kathmandu, Nepal. We deliver across Kathmandu, Lalitpur, Bhaktapur, and ship across Nepal upon request.</p>
+          </article>
+          <article>
+            <h3>How does payment work?</h3>
+            <p>We operate on a 100% Pay After Delivery policy. You inspect the furniture upon arrival at your home, ensure you are satisfied, and then pay via Cash or digital QR (Fonepay, eSewa).</p>
+          </article>
+          <article>
+            <h3>Can I customize the color, fabric, and size?</h3>
+            <p>Yes. Every sofa, bed, and wardrobe can be tailored to your exact measurements, fabric choices (bouclé, velvet, leatherette, suede), and wood polish tones. Call or WhatsApp 9860479751.</p>
+          </article>
+          <article>
+            <h3>How long does delivery take?</h3>
+            <p>In-stock items are delivered within 24 to 48 hours within Kathmandu Valley. Custom-built pieces take 5 to 10 days.</p>
+          </article>
+        </section>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+          <p>For orders, inquiries, or custom design consultations: Call or WhatsApp <a href="tel:+9779860479751"><strong>9860479751</strong></a> | Machine-readable context: <a href="/llms.txt">llms.txt</a> | <a href="/catalog.json">catalog.json</a></p>
+        </footer>
+      </main>
+    </div>
   </body>
 </html>
