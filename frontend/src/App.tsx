@@ -10,6 +10,7 @@ import CategoryPage from './pages/CategoryPage';
 import SubcategoryPage from './pages/SubcategoryPage';
 import SearchPage from './pages/SearchPage';
 import TechnologyPage from './pages/TechnologyPage';
+import AnalyticsPage from './pages/AnalyticsPage';
 import { trackPageView } from './utils/telemetry';
 
 // Automatically track page views on route changes
@@ -40,6 +41,8 @@ function App() {
               <Route path="/subcategory/:slug" element={<SubcategoryPage />} />
               <Route path="/search" element={<SearchPage />} />
               <Route path="/technology" element={<TechnologyPage />} />
+              <Route path="/admin/analytics" element={<AnalyticsPage />} />
+              <Route path="/admin/telemetry" element={<AnalyticsPage />} />
             </Routes>
           </main>
           <Footer />

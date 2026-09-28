@@ -6,6 +6,7 @@ import { Category, Product, ProductListResponse } from '../types';
 import ProductCard from '../components/ProductCard';
 import OptimizedImage from '../components/OptimizedImage';
 import { generateCollectionSchema, generateBreadcrumbSchema } from '../utils/structuredData';
+import { trackEvent } from '../utils/telemetry';
 
 const CategoryPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -24,6 +25,7 @@ const CategoryPage: React.FC = () => {
         setCategory(cat);
         const resp: ProductListResponse = await categoriesApi.getProducts(slug, { page: 1, ordering: '-created_at' });
         setProducts(resp.results);
+        trackEvent('category_view', { category_name: cat.name, category_slug: slug, product_count: resp.results.length });
       } catch (e: any) {
         setError('Failed to load category');
       } finally {

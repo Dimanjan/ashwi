@@ -6,6 +6,7 @@ import { Subcategory, Product, ProductListResponse } from '../types';
 import ProductCard from '../components/ProductCard';
 import OptimizedImage from '../components/OptimizedImage';
 import { generateBreadcrumbSchema } from '../utils/structuredData';
+import { trackEvent } from '../utils/telemetry';
 
 const SubcategoryPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -24,6 +25,7 @@ const SubcategoryPage: React.FC = () => {
         setSubcategory(sub);
         const resp: ProductListResponse = await subcategoriesApi.getProducts(slug, { page: 1, ordering: '-created_at' });
         setProducts(resp.results);
+        trackEvent('subcategory_view', { subcategory_name: sub.name, subcategory_slug: slug, product_count: resp.results.length });
       } catch (e: any) {
         setError('Failed to load subcategory');
       } finally {

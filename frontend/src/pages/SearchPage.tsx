@@ -5,6 +5,8 @@ import { productsApi } from '../services/api';
 import { Product, ProductListResponse } from '../types';
 import ProductCard from '../components/ProductCard';
 
+import { trackEvent } from '../utils/telemetry';
+
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
@@ -25,6 +27,7 @@ const SearchPage: React.FC = () => {
       try {
         const resp: ProductListResponse = await productsApi.search(q);
         setProducts(resp.results);
+        trackEvent('search', { query: q, results_count: resp.results.length });
       } finally {
         setLoading(false);
       }
