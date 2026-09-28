@@ -12,7 +12,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "https://api.ashwifurniture.com/api/$1"
+      "dest": "https://ashwifurniture.sajedar.com/api/$1"
     },
     {
       "src": "/static/(.*)",
