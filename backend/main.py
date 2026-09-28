@@ -3,10 +3,11 @@ import re
 import uuid
 import os
 import shutil
-from typing import Optional, List
+import hashlib
+from typing import Optional, List, Dict, Any
 from datetime import datetime
 
-from fastapi import FastAPI, HTTPException, Query, UploadFile, File, Form, Depends
+from fastapi import FastAPI, HTTPException, Query, UploadFile, File, Form, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -17,7 +18,8 @@ from .schemas import (
     SubcategoryResponse, SubcategoryCreate, SubcategoryListResponse,
     ProductResponse, ProductCreate, ProductListResponse,
     ProductReviewResponse, ProductReviewCreate,
-    ProductImageResponse
+    ProductImageResponse,
+    TelemetryEventCreate, TelemetryStatsResponse
 )
 
 from contextlib import asynccontextmanager
@@ -505,3 +507,120 @@ async def upload_image(file: UploadFile = File(...)):
     with open(filepath, "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
     return {"url": f"/media/{filename}", "filename": filename}
+
+# ==================== TELEMETRY & VISITOR TRACKING API ====================
+SALT = os.environ.get("TELEMETRY_SALT", "ashwi-privacy-salt-2026")
+
+def hash_ip(ip: str) -> str:
+    return hashlib.sha256((ip + SALT).encode()).hexdigest()[:16]
+
+@app.post("/api/telemetry/")
+def record_telemetry(payload: TelemetryEventCreate, request: Request):
+    # Obtain visitor IP from headers (behind Vercel/Cloudflare proxy) or client
+    forwarded = request.headers.get("x-forwarded-for")
+    client_ip = forwarded.split(",")[0].strip() if forwarded else (request.client.host if request.client else "127.0.0.1")
+    ip_hash = hash_ip(client_ip)
+
+    with get_db() as conn:
+        cursor = conn.cursor()
+        cursor.execute("""
+            INSERT INTO telemetry_events (
+                session_id, event_type, path, referrer, device_type,
+                browser, os, screen_size, ip_hash, metadata
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            payload.session_id,
+            payload.event_type,
+            payload.path,
+            payload.referrer or "",
+            payload.device_type or "desktop",
+            payload.browser or "",
+            payload.os or "",
+            payload.screen_size or "",
+            ip_hash,
+            json.dumps(payload.metadata or {})
+        ))
+    return {"status": "ok"}
+
+@app.get("/api/telemetry/stats/", response_model=TelemetryStatsResponse)
+def get_telemetry_stats():
+    with get_db() as conn:
+        cursor = conn.cursor()
+
+        # Total events & page views
+        cursor.execute("SELECT COUNT(*) FROM telemetry_events")
+        total_events = cursor.fetchone()[0]
+
+        cursor.execute("SELECT COUNT(*) FROM telemetry_events WHERE event_type = 'page_view'")
+        total_page_views = cursor.fetchone()[0]
+
+        # Unique visitors today (by hashed IP)
+        cursor.execute("SELECT COUNT(DISTINCT ip_hash) FROM telemetry_events WHERE date(created_at) = date('now')")
+        unique_today = cursor.fetchone()[0]
+
+        # Unique visitors all time
+        cursor.execute("SELECT COUNT(DISTINCT ip_hash) FROM telemetry_events")
+        unique_all_time = cursor.fetchone()[0]
+
+        # Top 10 pages visited
+        cursor.execute("""
+            SELECT path, COUNT(*) as views 
+            FROM telemetry_events 
+            WHERE event_type = 'page_view' 
+            GROUP BY path 
+            ORDER BY views DESC 
+            LIMIT 10
+        """)
+        top_pages = [{"path": r["path"], "views": r["views"]} for r in cursor.fetchall()]
+
+        # Top 10 products viewed
+        cursor.execute("""
+            SELECT json_extract(metadata, '$.product_name') as product_name, COUNT(*) as views
+            FROM telemetry_events
+            WHERE event_type = 'product_view' AND json_extract(metadata, '$.product_name') IS NOT NULL
+            GROUP BY product_name
+            ORDER BY views DESC
+            LIMIT 10
+        """)
+        top_products = [{"product": r["product_name"], "views": r["views"]} for r in cursor.fetchall()]
+
+        # Top referrers
+        cursor.execute("""
+            SELECT referrer, COUNT(*) as visits
+            FROM telemetry_events
+            WHERE referrer != '' AND referrer IS NOT NULL
+            GROUP BY referrer
+            ORDER BY visits DESC
+            LIMIT 8
+        """)
+        top_referrers = [{"referrer": r["referrer"], "visits": r["visits"]} for r in cursor.fetchall()]
+
+        # Device breakdown
+        cursor.execute("""
+            SELECT device_type, COUNT(*) as count
+            FROM telemetry_events
+            GROUP BY device_type
+        """)
+        device_breakdown = {r["device_type"]: r["count"] for r in cursor.fetchall()}
+
+        # Conversions (WhatsApp, phone calls)
+        cursor.execute("""
+            SELECT event_type, COUNT(*) as count
+            FROM telemetry_events
+            WHERE event_type IN ('whatsapp_click', 'call_click', 'review_submit')
+            GROUP BY event_type
+        """)
+        conversions = {r["event_type"]: r["count"] for r in cursor.fetchall()}
+
+        return TelemetryStatsResponse(
+            total_events=total_events,
+            total_page_views=total_page_views,
+            unique_visitors_today=unique_today,
+            unique_visitors_all_time=unique_all_time,
+            top_pages=top_pages,
+            top_products_viewed=top_products,
+            top_referrers=top_referrers,
+            device_breakdown=device_breakdown,
+            conversions=conversions
+        )
+

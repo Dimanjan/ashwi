@@ -36,7 +36,7 @@ const SearchPage: React.FC = () => {
   const searchDescription = q 
     ? `Found ${products.length} results for "${q}". Browse our collection of quality furniture for your home.`
     : 'Search our extensive collection of quality furniture for your home. Find the perfect pieces for every room.';
-  const searchUrl = `https://ashwi-furniture.com/search${q ? `?q=${encodeURIComponent(q)}` : ''}`;
+  const searchUrl = `https://www.ashwifurniture.com/search${q ? `?q=${encodeURIComponent(q)}` : ''}`;
 
   return (
     <>
@@ -46,7 +46,7 @@ const SearchPage: React.FC = () => {
         url={searchUrl}
         type="website"
         noindex={true}  // Typically we don't want search result pages indexed
-        canonicalUrl={q ? undefined : 'https://ashwi-furniture.com/products'}
+        canonicalUrl={q ? undefined : 'https://www.ashwifurniture.com/products'}
       />
       
       <div className="max-w-7xl mx-auto px-4 py-8">

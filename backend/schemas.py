@@ -156,3 +156,26 @@ class SubcategoryListResponse(BaseModel):
     next: Optional[str] = None
     previous: Optional[str] = None
     results: List[SubcategoryResponse]
+
+class TelemetryEventCreate(BaseModel):
+    session_id: str
+    event_type: str = "page_view"
+    path: str
+    referrer: Optional[str] = ""
+    device_type: Optional[str] = "desktop"
+    browser: Optional[str] = ""
+    os: Optional[str] = ""
+    screen_size: Optional[str] = ""
+    metadata: Optional[Dict[str, Any]] = Field(default_factory=dict)
+
+class TelemetryStatsResponse(BaseModel):
+    total_events: int
+    total_page_views: int
+    unique_visitors_today: int
+    unique_visitors_all_time: int
+    top_pages: List[Dict[str, Any]]
+    top_products_viewed: List[Dict[str, Any]]
+    top_referrers: List[Dict[str, Any]]
+    device_breakdown: Dict[str, int]
+    conversions: Dict[str, int]
+

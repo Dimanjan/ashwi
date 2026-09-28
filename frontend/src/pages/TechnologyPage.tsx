@@ -9,9 +9,9 @@ const TechnologyPage: React.FC = () => {
         title="Technology & AI Solutions - Ashwi Furniture"
         description="Discover how Ashwi Furniture leverages cutting-edge AI technology and web development solutions from Sajedar to provide exceptional customer experience and 24/7 support."
         keywords="AI technology, chatbot solutions, web development, customer support automation, Sajedar, Ashwi Furniture technology"
-        url="https://ashwi-furniture.com/technology"
+        url="https://www.ashwifurniture.com/technology"
         type="website"
-        canonicalUrl="https://ashwi-furniture.com/technology"
+        canonicalUrl="https://www.ashwifurniture.com/technology"
       />
       
       <div className="min-h-screen bg-gray-50">

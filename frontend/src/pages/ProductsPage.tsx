@@ -107,9 +107,9 @@ const ProductsPage: React.FC = () => {
         title="Shop All Furniture - Quality Home Furniture | Ashwi Furniture"
         description="Browse our complete collection of premium furniture products for your home. Living room, bedroom, dining room, office & outdoor furniture. Free shipping on orders over $500."
         keywords="furniture, home furniture, buy furniture online, quality furniture, affordable furniture, furniture store"
-        url="https://ashwi-furniture.com/products"
+        url="https://www.ashwifurniture.com/products"
         type="website"
-        canonicalUrl="https://ashwi-furniture.com/products"
+        canonicalUrl="https://www.ashwifurniture.com/products"
       />
       
     <div className="min-h-screen bg-gray-50">

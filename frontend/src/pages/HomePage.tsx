@@ -82,9 +82,9 @@ const HomePage: React.FC = () => {
         title="Ashwi Furniture Kathmandu | Handcrafted Furniture Nepal - Pay After Delivery"
         description="Discover luxury curved bubble sofas, solid wood king beds, wardrobes (daraz), dining tables & wooden mandirs at Ashwi Furniture Kathmandu. Pay only after delivery!"
         keywords="furniture in Kathmandu, furniture Nepal, bubble sofa Kathmandu, wooden bed price Nepal, daraz wardrobe Nepal, home mandir Nepal, tea table Kathmandu, Ashwi Furniture"
-        url="https://ashwi-furniture.com/"
+        url="https://www.ashwifurniture.com/"
         type="website"
-        canonicalUrl="https://ashwi-furniture.com/"
+        canonicalUrl="https://www.ashwifurniture.com/"
         structuredData={structuredData}
       />
       

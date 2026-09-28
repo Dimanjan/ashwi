@@ -4,9 +4,9 @@
  */
 
 export const SITE_NAME = 'Ashwi Furniture';
-export const SITE_URL = 'https://ashwi-furniture.com';
-export const SITE_DESCRIPTION = 'Discover premium quality furniture for your home at Ashwi Furniture. Shop living room, bedroom, dining room, office & outdoor furniture with free shipping on orders over $500.';
-export const DEFAULT_IMAGE = `${SITE_URL}/images/og-image.jpg`;
+export const SITE_URL = 'https://www.ashwifurniture.com';
+export const SITE_DESCRIPTION = 'Discover premium handcrafted furniture at Ashwi Furniture Kathmandu. Shop curved bubble sofas, solid wood beds, wardrobes, and mandirs with payment after delivery.';
+export const DEFAULT_IMAGE = `${SITE_URL}/bubblesofa.png`;
 export const TWITTER_HANDLE = '@ashwifurniture';
 
 /**

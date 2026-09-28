@@ -128,9 +128,30 @@ def init_db():
             );
         """)
 
+        # Telemetry & Visitor Tracking (IP-masked and privacy-focused)
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS telemetry_events (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                session_id TEXT NOT NULL,
+                event_type TEXT NOT NULL,
+                path TEXT NOT NULL,
+                referrer TEXT DEFAULT '',
+                device_type TEXT DEFAULT 'desktop',
+                browser TEXT DEFAULT '',
+                os TEXT DEFAULT '',
+                screen_size TEXT DEFAULT '',
+                ip_hash TEXT NOT NULL,
+                metadata TEXT DEFAULT '{}',
+                created_at TEXT DEFAULT (datetime('now'))
+            );
+        """)
+
         # Performance Indexes
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_products_slug ON products(slug);")
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_products_cat ON products(category_id);")
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_products_featured ON products(is_featured);")
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_products_bestseller ON products(is_bestseller);")
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_reviews_slug ON product_reviews(product_slug);")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_telemetry_created ON telemetry_events(created_at);")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_telemetry_event ON telemetry_events(event_type);")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_telemetry_session ON telemetry_events(session_id);")

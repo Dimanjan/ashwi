@@ -6,9 +6,9 @@ export const generateOrganizationSchema = () => {
     '@type': 'FurnitureStore',
     name: 'Ashwi Furniture',
     description: 'We offer beautiful furniture with high finishing in Kathmandu, Nepal. We take payment only after delivery.',
-    url: 'https://ashwi-furniture.com',
-    logo: 'https://ashwi-furniture.com/logo512.png',
-    image: 'https://ashwi-furniture.com/bubblesofa.png',
+    url: 'https://www.ashwifurniture.com',
+    logo: 'https://www.ashwifurniture.com/logo512.png',
+    image: 'https://www.ashwifurniture.com/bubblesofa.png',
     telephone: '+977-982-0150789',
     email: 'info@ashwifurniture.com.np',
     address: {
@@ -54,7 +54,7 @@ export const generateProductSchema = (product: Product) => {
     },
     offers: {
       '@type': 'Offer',
-      url: `https://ashwi-furniture.com/products/${product.slug}`,
+      url: `https://www.ashwifurniture.com/products/${product.slug}`,
       priceCurrency: 'NPR',
       price: parseFloat(price),
       priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString(),
@@ -125,12 +125,12 @@ export const generateWebsiteSchema = () => {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Ashwi Furniture',
-    url: 'https://ashwi-furniture.com',
+    url: 'https://www.ashwifurniture.com',
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://ashwi-furniture.com/search?q={search_term_string}',
+        urlTemplate: 'https://www.ashwifurniture.com/search?q={search_term_string}',
       },
       'query-input': 'required name=search_term_string',
     },
@@ -143,14 +143,14 @@ export const generateCollectionSchema = (category: Category, products: Product[]
     '@type': 'CollectionPage',
     name: `${category.name} Furniture`,
     description: category.description,
-    url: `https://ashwi-furniture.com/category/${category.slug}`,
+    url: `https://www.ashwifurniture.com/category/${category.slug}`,
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: products.length,
       itemListElement: products.map((product, index) => ({
         '@type': 'ListItem',
         position: index + 1,
-        url: `https://ashwi-furniture.com/products/${product.slug}`,
+        url: `https://www.ashwifurniture.com/products/${product.slug}`,
       })),
     },
   };
@@ -175,10 +175,10 @@ export const generateLocalBusinessSchema = () => {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://ashwi-furniture.com/#localbusiness',
+    '@id': 'https://www.ashwifurniture.com/#localbusiness',
     name: 'Ashwi Furniture',
     description: 'We offer beautiful handcrafted furniture with high finishing in Kathmandu, Nepal. We take payment only after delivery.',
-    url: 'https://ashwi-furniture.com',
+    url: 'https://www.ashwifurniture.com',
     telephone: '+977-982-0150789',
     email: 'info@ashwifurniture.com.np',
     address: {
@@ -197,8 +197,8 @@ export const generateLocalBusinessSchema = () => {
     currenciesAccepted: 'NPR',
     paymentAccepted: 'Cash on Delivery, Fonepay, Bank Transfer',
     priceRange: 'रुरु',
-    image: 'https://ashwi-furniture.com/bubblesofa.png',
-    logo: 'https://ashwi-furniture.com/logo512.png',
+    image: 'https://www.ashwifurniture.com/bubblesofa.png',
+    logo: 'https://www.ashwifurniture.com/logo512.png',
   };
 };
 
@@ -216,7 +216,7 @@ export const generateOfferCatalogSchema = (products: any[]) => {
         name: product.name,
         description: product.short_description || product.description,
         image: product.primary_image?.image_url || product.images[0]?.image_url,
-        url: `https://ashwi-furniture.com/products/${product.slug}`,
+        url: `https://www.ashwifurniture.com/products/${product.slug}`,
         sku: product.sku,
         offers: {
           '@type': 'Offer',
@@ -243,7 +243,7 @@ export const generateItemListSchema = (products: any[], listName: string) => {
       item: {
         '@type': 'Product',
         name: product.name,
-        url: `https://ashwi-furniture.com/products/${product.slug}`,
+        url: `https://www.ashwifurniture.com/products/${product.slug}`,
         image: product.primary_image?.image_url || product.images[0]?.image_url,
         description: product.short_description || product.description,
       },

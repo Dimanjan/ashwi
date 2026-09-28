@@ -48,15 +48,15 @@ const CategoryPage: React.FC = () => {
     );
   }
 
-  const categoryUrl = `https://ashwi-furniture.com/category/${category.slug}`;
+  const categoryUrl = `https://www.ashwifurniture.com/category/${category.slug}`;
   const categoryTitle = `${category.name} Furniture - Shop Quality ${category.name} | Ashwi Furniture`;
   const categoryDescription = `${category.description} Browse ${category.product_count} products in our ${category.name} collection. Free shipping on orders over $500.`;
-  const categoryImage = category.image || 'https://ashwi-furniture.com/images/og-image.jpg';
+  const categoryImage = category.image || 'https://www.ashwifurniture.com/images/og-image.jpg';
 
   // Generate structured data
   const collectionSchema = generateCollectionSchema(category, products.slice(0, 12));
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://ashwi-furniture.com/' },
+    { name: 'Home', url: 'https://www.ashwifurniture.com/' },
     { name: category.name, url: categoryUrl },
   ]);
 

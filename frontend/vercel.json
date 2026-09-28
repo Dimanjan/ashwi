@@ -11,6 +11,10 @@
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "https://api.ashwifurniture.com/api/$1"
+    },
+    {
       "src": "/static/(.*)",
       "dest": "/static/$1"
     },

@@ -18,11 +18,11 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'Ashwi Furniture - Quality Home Furniture & Decor',
-  description = 'Discover premium quality furniture for your home at Ashwi Furniture. Shop living room, bedroom, dining room, office & outdoor furniture with free shipping on orders over $500.',
-  keywords = 'furniture, home furniture, living room furniture, bedroom furniture, dining room furniture, office furniture, outdoor furniture, quality furniture, affordable furniture',
-  image = 'https://ashwi-furniture.com/images/og-image.jpg',
-  url = 'https://ashwi-furniture.com',
+  title = 'Ashwi Furniture - Handcrafted Furniture in Kathmandu, Nepal | Pay After Delivery',
+  description = 'Discover premium handcrafted furniture at Ashwi Furniture Kathmandu. Shop curved bubble sofas, solid wood beds, wardrobes, and mandirs with payment after delivery.',
+  keywords = 'furniture in Kathmandu, furniture Nepal, bubble sofa Kathmandu, wooden bed price Nepal, daraz wardrobe Nepal, home mandir Nepal, Ashwi Furniture',
+  image = 'https://www.ashwifurniture.com/bubblesofa.png',
+  url = 'https://www.ashwifurniture.com',
   type = 'website',
   author = 'Ashwi Furniture',
   publishedTime,

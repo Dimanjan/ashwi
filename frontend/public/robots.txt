@@ -13,7 +13,7 @@ Allow: /subcategory
 Allow: /search
 
 # Sitemap location
-Sitemap: https://ashwi-furniture.com/sitemap.xml
+Sitemap: https://www.ashwifurniture.com/sitemap.xml
 
 # Crawl-delay for politeness
 Crawl-delay: 1

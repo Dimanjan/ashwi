@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PhoneIcon, EnvelopeIcon, MapPinIcon, CodeBracketIcon, CpuChipIcon } from '@heroicons/react/24/outline';
+import { trackEvent } from '../utils/telemetry';
 
 const Footer: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const Footer: React.FC = () => {
                 href="https://www.facebook.com/profile.php?id=61579049243889" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('social_click', { platform: 'facebook', location: 'footer' })}
                 className="text-gray-400 hover:text-white transition-colors"
                 title="Follow us on Facebook"
               >
@@ -36,6 +38,7 @@ const Footer: React.FC = () => {
                 href="https://www.instagram.com/ashwifurniture" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('social_click', { platform: 'instagram', location: 'footer' })}
                 className="text-gray-400 hover:text-white transition-colors"
                 title="Follow us on Instagram"
               >
@@ -48,6 +51,7 @@ const Footer: React.FC = () => {
                 href="https://wa.me/9779820150789" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('whatsapp_click', { location: 'footer' })}
                 className="text-gray-400 hover:text-white transition-colors"
                 title="Contact us on WhatsApp"
               >
@@ -97,7 +101,13 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <PhoneIcon className="h-5 w-5 text-gray-400" />
-                <span className="text-gray-300">+977 982-0150789</span>
+                <a 
+                  href="tel:+9779820150789" 
+                  onClick={() => trackEvent('phone_call_click', { location: 'footer' })}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  +977 982-0150789
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <EnvelopeIcon className="h-5 w-5 text-gray-400" />
@@ -193,6 +203,7 @@ const Footer: React.FC = () => {
                 href="https://www.facebook.com/profile.php?id=61579049243889" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('social_click', { platform: 'facebook', location: 'footer_bottom' })}
                 className="text-gray-400 hover:text-white text-sm transition-colors"
                 title="Follow us on Facebook"
               >
@@ -202,6 +213,7 @@ const Footer: React.FC = () => {
                 href="https://www.instagram.com/ashwifurniture" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('social_click', { platform: 'instagram', location: 'footer_bottom' })}
                 className="text-gray-400 hover:text-white text-sm transition-colors"
                 title="Follow us on Instagram"
               >
@@ -211,6 +223,7 @@ const Footer: React.FC = () => {
                 href="https://wa.me/9779820150789" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('whatsapp_click', { location: 'footer_bottom' })}
                 className="text-gray-400 hover:text-white text-sm transition-colors"
                 title="Contact us on WhatsApp"
               >
