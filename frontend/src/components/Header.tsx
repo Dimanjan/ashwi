@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { MagnifyingGlassIcon, ShoppingBagIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { categoriesApi } from '../services/api';
 import { Category } from '../types';
+import { trackEvent } from '../utils/telemetry';
 
 const Header: React.FC = () => {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -32,6 +33,35 @@ const Header: React.FC = () => {
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
+      {/* Top Announcement & Contact Bar */}
+      <div className="bg-gray-900 text-white text-xs py-1.5 px-4">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <div className="flex items-center space-x-2">
+            <span className="hidden sm:inline">✨ Cash on delivery across Kathmandu Valley</span>
+            <span className="sm:hidden">✨ Payment after delivery</span>
+          </div>
+          <div className="flex items-center space-x-4">
+            <a 
+              href="tel:+9779860479751" 
+              onClick={() => trackEvent('phone_call_click', { location: 'header_top' })}
+              className="hover:text-primary-300 font-semibold flex items-center gap-1 transition-colors"
+            >
+              <span>📞</span> 9860479751
+            </a>
+            <span className="text-gray-600">|</span>
+            <a 
+              href="https://wa.me/9779860479751" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={() => trackEvent('whatsapp_click', { location: 'header_top' })}
+              className="text-green-400 hover:text-green-300 font-medium transition-colors"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -63,6 +93,17 @@ const Header: React.FC = () => {
 
           {/* Search and Actions */}
           <div className="flex items-center space-x-4">
+            {/* Direct Call Action */}
+            <a
+              href="tel:+9779860479751"
+              onClick={() => trackEvent('phone_call_click', { location: 'header_main' })}
+              className="hidden lg:flex items-center gap-1.5 text-xs font-semibold bg-primary-50 text-primary-700 px-3 py-1.5 rounded-full border border-primary-200 hover:bg-primary-100 transition-colors"
+              title="Call Ashwi Furniture"
+            >
+              <span>📞</span>
+              <span>9860479751</span>
+            </a>
+
             {/* Search Form */}
             <form onSubmit={handleSearch} className="hidden sm:flex items-center">
               <div className="relative">
@@ -124,6 +165,26 @@ const Header: React.FC = () => {
                   {category.name}
                 </Link>
               ))}
+
+              {/* Mobile Quick Contact */}
+              <div className="pt-2 border-t border-gray-100 flex gap-2">
+                <a
+                  href="tel:+9779860479751"
+                  onClick={() => trackEvent('phone_call_click', { location: 'header_mobile' })}
+                  className="flex-1 bg-primary-600 text-white text-center py-2 px-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-1"
+                >
+                  📞 9860479751
+                </a>
+                <a
+                  href="https://wa.me/9779860479751"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent('whatsapp_click', { location: 'header_mobile' })}
+                  className="flex-1 bg-green-600 text-white text-center py-2 px-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-1"
+                >
+                  WhatsApp
+                </a>
+              </div>
             </nav>
             
             {/* Mobile Search */}

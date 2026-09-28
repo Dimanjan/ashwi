@@ -9,7 +9,7 @@ export const generateOrganizationSchema = () => {
     url: 'https://www.ashwifurniture.com',
     logo: 'https://www.ashwifurniture.com/logo512.png',
     image: 'https://www.ashwifurniture.com/bubblesofa.png',
-    telephone: '+977-982-0150789',
+    telephone: '+977-986-0479751',
     email: 'info@ashwifurniture.com.np',
     address: {
       '@type': 'PostalAddress',
@@ -179,7 +179,7 @@ export const generateLocalBusinessSchema = () => {
     name: 'Ashwi Furniture',
     description: 'We offer beautiful handcrafted furniture with high finishing in Kathmandu, Nepal. We take payment only after delivery.',
     url: 'https://www.ashwifurniture.com',
-    telephone: '+977-982-0150789',
+    telephone: '+977-986-0479751',
     email: 'info@ashwifurniture.com.np',
     address: {
       '@type': 'PostalAddress',

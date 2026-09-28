@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
                 </svg>
               </a>
               <a 
-                href="https://wa.me/9779820150789" 
+                href="https://wa.me/9779860479751" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 onClick={() => trackEvent('whatsapp_click', { location: 'footer' })}
@@ -102,11 +102,11 @@ const Footer: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <PhoneIcon className="h-5 w-5 text-gray-400" />
                 <a 
-                  href="tel:+9779820150789" 
+                  href="tel:+9779860479751" 
                   onClick={() => trackEvent('phone_call_click', { location: 'footer' })}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  +977 982-0150789
+                  +977 986-0479751
                 </a>
               </div>
               <div className="flex items-center space-x-3">
@@ -220,7 +220,7 @@ const Footer: React.FC = () => {
                 Instagram
               </a>
               <a 
-                href="https://wa.me/9779820150789" 
+                href="https://wa.me/9779860479751" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 onClick={() => trackEvent('whatsapp_click', { location: 'footer_bottom' })}

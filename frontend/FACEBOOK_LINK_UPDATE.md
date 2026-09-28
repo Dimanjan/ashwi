@@ -13,7 +13,7 @@ Successfully updated the Ashwi Furniture website to include the correct Facebook
   - ✅ Added proper `target="_blank"` and `rel="noopener noreferrer"` attributes
   - ✅ Added descriptive `title` attributes for accessibility
   - ✅ Added Instagram link: `https://www.instagram.com/ashwifurniture`
-  - ✅ Added WhatsApp link: `https://wa.me/9779820150789`
+  - ✅ Added WhatsApp link: `https://wa.me/9779860479751`
   - ✅ Replaced Twitter with WhatsApp (more relevant for Nepal market)
 
 ### 2. **Structured Data Updates**
@@ -45,7 +45,7 @@ Successfully updated the Ashwi Furniture website to include the correct Facebook
    - Link in footer bottom
    - Structured data markup
 
-3. **WhatsApp**: [https://wa.me/9779820150789](https://wa.me/9779820150789)
+3. **WhatsApp**: [https://wa.me/9779860479751](https://wa.me/9779860479751)
    - Icon in header social media section
    - Link in footer bottom
    - Direct contact functionality
@@ -100,7 +100,7 @@ Successfully updated the Ashwi Furniture website to include the correct Facebook
   "sameAs": [
     "https://www.facebook.com/profile.php?id=61579049243889",
     "https://www.instagram.com/ashwifurniture",
-    "https://wa.me/9779820150789"
+    "https://wa.me/9779860479751"
   ]
 }
 ```
@@ -177,7 +177,7 @@ Successfully updated the Ashwi Furniture website to include the correct Facebook
 ### **Social Media URLs:**
 - **Facebook**: https://www.facebook.com/profile.php?id=61579049243889
 - **Instagram**: https://www.instagram.com/ashwifurniture
-- **WhatsApp**: https://wa.me/9779820150789
+- **WhatsApp**: https://wa.me/9779860479751
 
 ## 🎯 Conclusion
 

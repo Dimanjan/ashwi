@@ -189,7 +189,7 @@ const ProductDetailPage: React.FC = () => {
             <div className="border-t border-gray-200 pt-6 mt-6">
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href={`https://wa.me/9779820150789?text=${encodeURIComponent(`Hi Ashwi Furniture, I am interested in ordering/inquiring about ${product.name} (SKU: ${product.sku}).`)}`}
+                  href={`https://wa.me/9779860479751?text=${encodeURIComponent(`Hi Ashwi Furniture, I am interested in ordering/inquiring about ${product.name} (SKU: ${product.sku}).`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackEvent('whatsapp_order_click', { product_slug: product.slug, product_name: product.name, price: product.sale_price || product.price })}
@@ -201,11 +201,11 @@ const ProductDetailPage: React.FC = () => {
                   <span>Order via WhatsApp</span>
                 </a>
                 <a
-                  href="tel:+9779820150789"
+                  href="tel:+9779860479751"
                   onClick={() => trackEvent('phone_call_click', { location: 'product_detail', product_slug: product.slug })}
                   className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-4 rounded-lg text-center transition-colors shadow flex items-center justify-center gap-2"
                 >
-                  <span>Call to Order</span>
+                  <span>Call: 9860479751</span>
                 </a>
               </div>
               <div className="mt-3 text-xs text-gray-500 flex flex-wrap items-center gap-x-3 gap-y-1">
