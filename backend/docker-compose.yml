@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  ashwi-backend:
+    build:
+      context: ..
+      dockerfile: backend/Dockerfile
+    container_name: ashwi-backend
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - ashwi-data:/app/data
+      - ashwi-media:/app/media
+    environment:
+      - DB_PATH=/app/data/ashwi.sqlite3
+      - MEDIA_DIR=/app/media
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  ashwi-data:
+  ashwi-media:

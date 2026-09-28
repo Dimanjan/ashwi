@@ -6,7 +6,12 @@ import ProductCard from '../components/ProductCard';
 import SEO from '../components/SEO';
 import { productsApi, categoriesApi } from '../services/api';
 import { Product, Category } from '../types';
-import { generateOrganizationSchema, generateWebsiteSchema } from '../utils/structuredData';
+import { 
+  generateOrganizationSchema, 
+  generateWebsiteSchema, 
+  generateLocalBusinessSchema, 
+  generateFAQSchema 
+} from '../utils/structuredData';
 
 const HomePage: React.FC = () => {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -45,17 +50,38 @@ const HomePage: React.FC = () => {
   }
 
   // Structured data for home page
+  const faqs = [
+    {
+      question: 'Where is Ashwi Furniture located in Nepal?',
+      answer: 'Ashwi Furniture is located in Kathmandu, Nepal, offering home delivery across Kathmandu Valley and shipping across all provinces of Nepal.'
+    },
+    {
+      question: 'What is the payment policy at Ashwi Furniture?',
+      answer: 'We take payment only after delivery! You can inspect your furniture upon delivery and pay via Cash on Delivery, Fonepay, or bank transfer.'
+    },
+    {
+      question: 'Do you offer custom furniture design?',
+      answer: 'Yes, we customize sofas, beds, wardrobes (daraz), dining tables, and wooden mandirs according to your preferred dimensions, timber type, and fabric.'
+    },
+    {
+      question: 'Is there a warranty on your furniture?',
+      answer: 'Yes, all our solid wood and framed furniture pieces come with a 5 to 10 year structural warranty against defects.'
+    }
+  ];
+
   const structuredData = [
     generateOrganizationSchema(),
     generateWebsiteSchema(),
+    generateLocalBusinessSchema(),
+    generateFAQSchema(faqs)
   ];
 
   return (
     <>
       <SEO
-        title="Ashwi Furniture - Quality Home Furniture & Decor"
-        description="Discover premium quality furniture for your home at Ashwi Furniture. Shop living room, bedroom, dining room, office & outdoor furniture with free shipping on orders over $500."
-        keywords="furniture, home furniture, living room furniture, bedroom furniture, dining room furniture, office furniture, outdoor furniture, quality furniture, affordable furniture"
+        title="Ashwi Furniture Kathmandu | Handcrafted Furniture Nepal - Pay After Delivery"
+        description="Discover luxury curved bubble sofas, solid wood king beds, wardrobes (daraz), dining tables & wooden mandirs at Ashwi Furniture Kathmandu. Pay only after delivery!"
+        keywords="furniture in Kathmandu, furniture Nepal, bubble sofa Kathmandu, wooden bed price Nepal, daraz wardrobe Nepal, home mandir Nepal, tea table Kathmandu, Ashwi Furniture"
         url="https://ashwi-furniture.com/"
         type="website"
         canonicalUrl="https://ashwi-furniture.com/"
@@ -68,44 +94,49 @@ const HomePage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
+                <div className="inline-flex items-center space-x-2 bg-primary-700 bg-opacity-60 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-primary-500">
+                  <span>✨ 100% Payment After Delivery</span>
+                </div>
                 <h1 className="text-4xl md:text-6xl font-bold mb-6">
                   Transform Your Home with
-                  <span className="block text-primary-200">Beautiful Furniture</span>
+                  <span className="block text-primary-200">Handcrafted Furniture</span>
                 </h1>
                 <p className="text-xl text-primary-100 mb-8 max-w-lg">
-                  Discover our curated collection of high-quality furniture that combines style, comfort, and durability. 
-                  From living rooms to bedrooms, we have everything you need to create your perfect space.
+                  Beautiful furniture with high finishing in Kathmandu, Nepal. We take payment only after delivery, ensuring complete peace of mind.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     to="/products"
-                    className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center"
+                    className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center shadow-md hover:shadow-lg"
                   >
-                    Shop Now
+                    Shop All Furniture
                     <ArrowRightIcon className="ml-2 h-5 w-5" />
                   </Link>
                   <Link
                     to="/category/living-room"
                     className="border-2 border-white text-white hover:bg-white hover:text-primary-600 px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center"
                   >
-                    Living Room
+                    Living Room Collection
                   </Link>
                 </div>
               </div>
               <div className="hidden lg:block">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-primary-500 rounded-lg transform rotate-3"></div>
-                  <div className="relative bg-white rounded-lg p-8 shadow-xl">
+                  <div className="absolute inset-0 bg-primary-500 rounded-2xl transform rotate-3 opacity-50"></div>
+                  <div className="relative bg-white rounded-2xl p-8 shadow-2xl text-gray-900 border border-gray-100">
                     <div className="text-center">
                       <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="text-2xl">🏠</span>
+                        <span className="text-3xl">🤝</span>
                       </div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                        Free Shipping
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                        Payment After Delivery
                       </h3>
-                      <p className="text-gray-600">
-                        On orders over $500
+                      <p className="text-gray-600 mb-4">
+                        Inspect your furniture thoroughly at your home before paying. Complete trust and satisfaction guaranteed.
                       </p>
+                      <div className="inline-flex items-center space-x-2 text-primary-600 font-semibold text-sm bg-primary-50 px-4 py-2 rounded-lg">
+                        <span>🚚 Free Delivery in Kathmandu Valley</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -134,15 +165,25 @@ const HomePage: React.FC = () => {
                   to={`/category/${category.slug}`}
                   className="group block"
                 >
-                  <div className="bg-gray-50 rounded-lg p-8 text-center hover:bg-primary-50 transition-colors">
-                    <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 transition-colors">
-                      <span className="text-2xl">
-                        {category.name === 'Living Room' && '🛋️'}
-                        {category.name === 'Bedroom' && '🛏️'}
-                        {category.name === 'Dining Room' && '🍽️'}
-                        {category.name === 'Office' && '💼'}
-                        {category.name === 'Outdoor' && '🌳'}
-                      </span>
+                  <div className="bg-gray-50 rounded-lg p-8 text-center hover:bg-primary-50 transition-colors shadow-sm hover:shadow-md">
+                    <div className="w-24 h-24 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden group-hover:bg-primary-200 transition-colors border-2 border-primary-200">
+                      {category.image ? (
+                        <img 
+                          src={category.image} 
+                          alt={`${category.name} collection`}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <span className="text-3xl">
+                          {category.name === 'Living Room' && '🛋️'}
+                          {category.name === 'Bedroom' && '🛏️'}
+                          {category.name === 'Dining Room' && '🍽️'}
+                          {category.name === 'Office' && '💼'}
+                          {category.name === 'Outdoor' && '🌳'}
+                          {category.name.includes('Mandir') && '🛕'}
+                        </span>
+                      )}
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
                       {category.name}

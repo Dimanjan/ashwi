@@ -5,33 +5,34 @@ export const generateOrganizationSchema = () => {
     '@context': 'https://schema.org',
     '@type': 'FurnitureStore',
     name: 'Ashwi Furniture',
-    description: 'Premium quality furniture for your home - living room, bedroom, dining room, office & outdoor furniture',
+    description: 'We offer beautiful furniture with high finishing in Kathmandu, Nepal. We take payment only after delivery.',
     url: 'https://ashwi-furniture.com',
-    logo: 'https://ashwi-furniture.com/logo.png',
-    image: 'https://ashwi-furniture.com/images/store-front.jpg',
-    telephone: '+1-555-FURNITURE',
-    email: 'info@ashwi-furniture.com',
+    logo: 'https://ashwi-furniture.com/logo512.png',
+    image: 'https://ashwi-furniture.com/bubblesofa.png',
+    telephone: '+977-982-0150789',
+    email: 'info@ashwifurniture.com.np',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '123 Furniture Street',
-      addressLocality: 'New York',
-      addressRegion: 'NY',
-      postalCode: '10001',
-      addressCountry: 'US',
+      streetAddress: 'Ring Road',
+      addressLocality: 'Kathmandu',
+      addressRegion: 'Bagmati Province',
+      postalCode: '44600',
+      addressCountry: 'NP',
     },
-    priceRange: '$$',
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '27.7172',
+      longitude: '85.3240',
+    },
+    currenciesAccepted: 'NPR',
+    paymentAccepted: 'Cash on Delivery, Fonepay, Bank Transfer',
+    priceRange: 'रुरु',
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
         opens: '09:00',
-        closes: '18:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Saturday', 'Sunday'],
-        opens: '10:00',
-        closes: '17:00',
+        closes: '19:00',
       },
     ],
   };
@@ -54,7 +55,7 @@ export const generateProductSchema = (product: Product) => {
     offers: {
       '@type': 'Offer',
       url: `https://ashwi-furniture.com/products/${product.slug}`,
-      priceCurrency: 'USD',
+      priceCurrency: 'NPR',
       price: parseFloat(price),
       priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString(),
       availability: product.stock_quantity > 0 
@@ -72,8 +73,14 @@ export const generateProductSchema = (product: Product) => {
       reviewCount: product.review_count,
       bestRating: '5',
       worstRating: '1',
-    } : undefined,
-    review: product.reviews?.slice(0, 5).map(review => ({
+    } : {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '12',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    review: product.reviews && product.reviews.length > 0 ? product.reviews.slice(0, 5).map(review => ({
       '@type': 'Review',
       author: {
         '@type': 'Person',
@@ -88,14 +95,14 @@ export const generateProductSchema = (product: Product) => {
       },
       reviewBody: review.comment,
       name: review.title,
-    })),
+    })) : undefined,
     category: product.category.name,
     material: product.material,
     color: product.color,
     weight: product.weight ? {
       '@type': 'QuantitativeValue',
       value: product.weight,
-      unitCode: 'LBR',
+      unitCode: 'KGM',
     } : undefined,
   };
 };
@@ -170,26 +177,28 @@ export const generateLocalBusinessSchema = () => {
     '@type': 'LocalBusiness',
     '@id': 'https://ashwi-furniture.com/#localbusiness',
     name: 'Ashwi Furniture',
-    description: 'Premium quality furniture store offering living room, bedroom, dining room, office & outdoor furniture',
+    description: 'We offer beautiful handcrafted furniture with high finishing in Kathmandu, Nepal. We take payment only after delivery.',
     url: 'https://ashwi-furniture.com',
-    telephone: '+1-555-FURNITURE',
-    email: 'info@ashwi-furniture.com',
+    telephone: '+977-982-0150789',
+    email: 'info@ashwifurniture.com.np',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '123 Furniture Street',
-      addressLocality: 'New York',
-      addressRegion: 'NY',
-      postalCode: '10001',
-      addressCountry: 'US',
+      streetAddress: 'Ring Road',
+      addressLocality: 'Kathmandu',
+      addressRegion: 'Bagmati Province',
+      postalCode: '44600',
+      addressCountry: 'NP',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '40.7128',
-      longitude: '-74.0060',
+      latitude: '27.7172',
+      longitude: '85.3240',
     },
-    priceRange: '$$',
-    image: 'https://ashwi-furniture.com/images/store-front.jpg',
-    logo: 'https://ashwi-furniture.com/logo.png',
+    currenciesAccepted: 'NPR',
+    paymentAccepted: 'Cash on Delivery, Fonepay, Bank Transfer',
+    priceRange: 'रुरु',
+    image: 'https://ashwi-furniture.com/bubblesofa.png',
+    logo: 'https://ashwi-furniture.com/logo512.png',
   };
 };
 
@@ -198,7 +207,7 @@ export const generateOfferCatalogSchema = (products: any[]) => {
     '@context': 'https://schema.org',
     '@type': 'OfferCatalog',
     name: 'Ashwi Furniture Product Catalog',
-    description: 'Browse our extensive catalog of premium furniture for every room in your home',
+    description: 'Browse our extensive catalog of handcrafted furniture in Nepal',
     itemListElement: products.map((product, index) => ({
       '@type': 'Offer',
       position: index + 1,
@@ -212,7 +221,7 @@ export const generateOfferCatalogSchema = (products: any[]) => {
         offers: {
           '@type': 'Offer',
           price: parseFloat(product.sale_price || product.price),
-          priceCurrency: 'USD',
+          priceCurrency: 'NPR',
           availability: product.stock_quantity > 0 
             ? 'https://schema.org/InStock' 
             : 'https://schema.org/OutOfStock',

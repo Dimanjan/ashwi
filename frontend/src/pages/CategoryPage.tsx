@@ -83,12 +83,22 @@ const CategoryPage: React.FC = () => {
           </ol>
         </nav>
 
-        <div className="mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-3">{category.name} Furniture</h1>
-          {category.description && (
-            <p className="text-lg text-gray-600">{category.description}</p>
+        <div className="mb-8">
+          {category.image && (
+            <div className="w-full h-64 md:h-80 rounded-2xl overflow-hidden mb-6 shadow-md border border-gray-100">
+              <img 
+                src={category.image} 
+                alt={`${category.name} hero`}
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
           )}
-          <p className="text-sm text-gray-500 mt-2">{category.product_count} products available</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{category.name} Furniture</h1>
+          {category.description && (
+            <p className="text-lg text-gray-600 max-w-3xl">{category.description}</p>
+          )}
+          <p className="text-sm font-semibold text-primary-600 mt-2">{category.product_count} products available in Nepal</p>
         </div>
 
         {products.length === 0 ? (

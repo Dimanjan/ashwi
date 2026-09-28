@@ -195,32 +195,110 @@ const ProductDetailPage: React.FC = () => {
         )}
         
         {/* Reviews Section */}
-        {product.reviews && product.reviews.length > 0 && (
-          <div className="mt-12 bg-white rounded-lg shadow p-6">
-            <h2 className="text-2xl font-semibold mb-6">Customer Reviews</h2>
-            <div className="space-y-6">
+        <div className="mt-12 bg-white rounded-lg shadow p-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 pb-4 border-b border-gray-100">
+            <div>
+              <h2 className="text-2xl font-semibold">Customer Reviews</h2>
+              <p className="text-sm text-gray-500 mt-1">Verified customer feedback and ratings</p>
+            </div>
+          </div>
+
+          {/* Existing Reviews */}
+          {product.reviews && product.reviews.length > 0 ? (
+            <div className="space-y-6 mb-8">
               {product.reviews.map((review) => (
-                <div key={review.id} className="border-b border-gray-200 pb-6 last:border-0">
+                <div key={review.id} className="border-b border-gray-100 pb-6 last:border-0 bg-gray-50 p-4 rounded-lg">
                   <div className="flex items-center justify-between mb-2">
                     <div>
-                      <h3 className="font-semibold">{review.title}</h3>
+                      <h3 className="font-semibold text-gray-900">{review.title}</h3>
                       <p className="text-sm text-gray-600">{review.customer_name}</p>
                     </div>
                     <div className="flex items-center">
                       {[...Array(5)].map((_, i) => (
-                        <span key={i} className={i < review.rating ? 'text-yellow-400' : 'text-gray-300'}>★</span>
+                        <span key={i} className={i < review.rating ? 'text-yellow-400 text-lg' : 'text-gray-300 text-lg'}>★</span>
                       ))}
                     </div>
                   </div>
-                  <p className="text-gray-700">{review.comment}</p>
-                  <p className="text-xs text-gray-500 mt-2">
+                  <p className="text-gray-700 mt-2">{review.comment}</p>
+                  <p className="text-xs text-gray-400 mt-2">
                     {new Date(review.created_at).toLocaleDateString()}
                   </p>
                 </div>
               ))}
             </div>
+          ) : (
+            <p className="text-gray-500 mb-8 italic">No reviews yet for this product. Be the first to review!</p>
+          )}
+
+          {/* Write a Review Section */}
+          <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Leave a Customer Review</h3>
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+                const customer_name = formData.get('name') as string;
+                const email = formData.get('email') as string;
+                const title = formData.get('title') as string;
+                const comment = formData.get('comment') as string;
+                const rating = parseInt(formData.get('rating') as string, 10) || 5;
+
+                if (!customer_name || !email || !comment) return;
+
+                const { reviewsApi } = await import('../services/api');
+                const created = await reviewsApi.create(product.slug, {
+                  customer_name,
+                  email,
+                  title: title || 'Great Quality!',
+                  comment,
+                  rating
+                });
+
+                setProduct({
+                  ...product,
+                  reviews: [created, ...(product.reviews || [])],
+                  review_count: (product.review_count || 0) + 1
+                });
+                form.reset();
+                alert('Thank you! Your review has been submitted.');
+              }}
+              className="space-y-4"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold uppercase text-gray-700 mb-1">Your Name</label>
+                  <input required name="name" type="text" placeholder="e.g. Ramesh Karki" className="w-full border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 outline-none" />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold uppercase text-gray-700 mb-1">Email</label>
+                  <input required name="email" type="email" placeholder="e.g. ramesh@gmail.com" className="w-full border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 outline-none" />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold uppercase text-gray-700 mb-1">Rating</label>
+                  <select name="rating" defaultValue="5" className="w-full border rounded-lg px-3 py-2 text-sm bg-white focus:ring-2 focus:ring-primary-500 outline-none">
+                    <option value="5">★★★★★ (5 Stars - Excellent)</option>
+                    <option value="4">★★★★☆ (4 Stars - Very Good)</option>
+                    <option value="3">★★★☆☆ (3 Stars - Average)</option>
+                    <option value="2">★★☆☆☆ (2 Stars - Below Average)</option>
+                    <option value="1">★☆☆☆☆ (1 Star - Poor)</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label className="block text-xs font-semibold uppercase text-gray-700 mb-1">Review Headline</label>
+                <input name="title" type="text" placeholder="e.g. Outstanding comfort and craftsmanship" className="w-full border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 outline-none" />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold uppercase text-gray-700 mb-1">Your Review</label>
+                <textarea required name="comment" rows={3} placeholder="Write your honest experience with this furniture..." className="w-full border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 outline-none"></textarea>
+              </div>
+              <button type="submit" className="bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-2 rounded-lg text-sm transition-colors shadow">
+                Submit Review
+              </button>
+            </form>
           </div>
-        )}
+        </div>
       </div>
     </>
   );

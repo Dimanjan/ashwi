@@ -85,12 +85,22 @@ const SubcategoryPage: React.FC = () => {
           </ol>
         </nav>
 
-        <div className="mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-3">{subcategory.name}</h1>
-          {subcategory.description && (
-            <p className="text-lg text-gray-600">{subcategory.description}</p>
+        <div className="mb-8">
+          {subcategory.image && (
+            <div className="w-full h-64 md:h-80 rounded-2xl overflow-hidden mb-6 shadow-md border border-gray-100">
+              <img 
+                src={subcategory.image} 
+                alt={`${subcategory.name} hero`}
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
           )}
-          <p className="text-sm text-gray-500 mt-2">{subcategory.product_count} products available</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{subcategory.name}</h1>
+          {subcategory.description && (
+            <p className="text-lg text-gray-600 max-w-3xl">{subcategory.description}</p>
+          )}
+          <p className="text-sm font-semibold text-primary-600 mt-2">{subcategory.product_count} products available in Nepal</p>
         </div>
 
         {products.length === 0 ? (
