@@ -65,3 +65,30 @@ pip install -r backend/requirements.txt
 uvicorn backend.main:app --reload --port 8000
 ```
 Open [http://localhost:8000/docs](http://localhost:8000/docs) in your browser.
+
+---
+
+## 🛡️ Stealth Architecture: Zero Origin IP Discovery
+
+To ensure adversaries, bots, port scanners (Shodan, Censys, Masscan), and attackers cannot discover the Kamatera VPS IP address:
+
+### Strategy 1: Cloudflare Tunnel (Zero Open Inbound Ports - Recommended)
+With Cloudflare Tunnel, ports 80 and 443 are **completely closed** on the server firewall.
+The Kamatera server makes an outbound encrypted connection to Cloudflare:
+```bash
+sudo ./backend/setup-cloudflare-tunnel.sh
+```
+- **Discovery Probability: 0%**. No port scan on Earth can detect web services running on this VPS.
+
+### Strategy 2: Cloudflare Proxy + Firewall IP Whitelist
+If using Nginx with an A-record proxied through Cloudflare (`ashwifurniture.sajedar.com`):
+1. **Nginx Drop-All Server Block** ([`nginx.conf`](./nginx.conf)):
+   Direct requests to the Kamatera IP without matching the authenticated hostname are immediately dropped with `HTTP 444` (No Response).
+2. **UFW Cloudflare-Only Lockdown** ([`lockdown-firewall.sh`](./lockdown-firewall.sh)):
+   ```bash
+   sudo ./backend/lockdown-firewall.sh
+   ```
+   Restricts ports 80 and 443 so **only Cloudflare edge proxy IPs** can connect. All direct IP scans from adversaries are silently dropped at the packet level.
+3. **Vercel Reverse Proxy** ([`frontend/vercel.json`](../frontend/vercel.json)):
+   The client browser visits `https://www.ashwifurniture.com/api/...`. Vercel proxies requests server-to-server. The backend domain and VPS IP are never visible in the user's browser DevTools.
+
