@@ -71,3 +71,8 @@ frontend/dist/
 
 # ---- OS ----
 Thumbs.db 
+
+# ---- Local-only tools (never commit or send to server) ----
+local-tools/
+*.local.*
+local_*
