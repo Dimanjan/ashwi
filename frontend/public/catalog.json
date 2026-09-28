@@ -1,18 +1,24 @@
 {
   "store": {
     "name": "Ashwi Furniture",
-    "location": "Kathmandu, Nepal",
+    "name_ne": "अश्वी फर्निचर",
+    "location": "Kathmandu, Nepal (काठमाडौँ, नेपाल)",
+    "logo_url": "https://www.ashwifurniture.com/logo512.png",
+    "preview_image_url": "https://www.ashwifurniture.com/og-image.jpg",
     "contact": {
       "phone": "+977-986-0479751",
+      "phone_display": "9860479751",
       "whatsapp": "https://wa.me/9779860479751",
       "email": "info@ashwifurniture.com.np",
       "website": "https://www.ashwifurniture.com"
     },
     "policy": {
-      "payment": "100% Payment After Delivery. Cash on Delivery (COD), Fonepay QR, Bank Transfer.",
-      "delivery": "Free delivery and white-glove assembly across Kathmandu Valley (Kathmandu, Lalitpur, Bhaktapur).",
+      "payment": "100% Payment After Delivery (डेलिभरी भएपछि भुक्तानी). Cash on Delivery (COD), Fonepay QR (फोनपे), eSewa (इसेवा), Bank Transfer.",
+      "delivery": "Free delivery and white-glove assembly across Kathmandu Valley (Kathmandu, Lalitpur, Bhaktapur). Nationwide shipping across Nepal.",
       "warranty": "5 to 10 years structural warranty on solid hardwood frames."
-    }
+    },
+    "payment_methods": ["Cash on Delivery", "Fonepay QR", "eSewa", "Bank Transfer"],
+    "delivery_areas": ["Kathmandu", "Lalitpur", "Bhaktapur", "Pokhara", "Chitwan", "Nepal Nationwide"]
   },
   "products": [
     {

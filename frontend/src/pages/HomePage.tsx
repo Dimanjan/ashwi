@@ -50,31 +50,31 @@ const HomePage: React.FC = () => {
     );
   }
 
-  // Structured data for home page and visible FAQ section
+  // Structured data for home page and visible FAQ section (Bilingual SEO for Nepali & Global Audience)
   const faqs = [
     {
-      question: 'Where is Ashwi Furniture located and where do you deliver in Nepal?',
-      answer: 'Ashwi Furniture is based in Kathmandu, Nepal. We provide free doorstep delivery and installation across the entire Kathmandu Valley (Kathmandu, Lalitpur, and Bhaktapur) and safe transport across all major cities in Nepal.'
+      question: 'Where is Ashwi Furniture located and where do you deliver in Nepal? (अश्वी फर्निचर कहाँ छ?)',
+      answer: 'Ashwi Furniture is based in Kathmandu, Nepal. We provide free doorstep delivery and professional assembly across the entire Kathmandu Valley (Kathmandu, Lalitpur/Patan, and Bhaktapur) within 24 to 72 hours, and secure transport to Pokhara, Chitwan, Butwal, and all major cities in Nepal.'
     },
     {
-      question: 'How does payment work at Ashwi Furniture?',
-      answer: 'We operate on a 100% Payment After Delivery model! You do not pay advance money for standard catalog items. You only pay after our delivery team brings your furniture to your home and you inspect its quality and finishing. We accept Cash on Delivery, Fonepay QR, and bank transfers.'
+      question: 'How does payment work at Ashwi Furniture? (भुक्तानी नीति कस्तो छ?)',
+      answer: 'We operate on a 100% Payment After Delivery model (डेलिभरी पश्चात मात्र भुक्तानी)! You do not pay advance money for standard catalog furniture. You only pay after our delivery team brings your furniture to your home and you inspect its finishing and comfort. We accept Cash on Delivery, Fonepay QR (फोनपे), eSewa (इसेवा), and bank transfers.'
     },
     {
-      question: 'How do I place an order or inquire about furniture?',
-      answer: 'You can order directly through our website, call us directly at 9860479751, or message us on WhatsApp at +977-986-0479751. Our team responds promptly with fabric swatches, dimension options, and delivery schedules.'
+      question: 'How do I place an order or inquire about furniture? (अर्डर कसरी गर्ने?)',
+      answer: 'You can order directly through our website, call us directly at 9860479751, or message us on WhatsApp at +977-986-0479751. Our team responds promptly with fabric swatches, custom dimensions, and delivery schedules.'
     },
     {
-      question: 'Can I customize dimensions, fabric, and wood finishes?',
-      answer: 'Yes! All Ashwi Furniture products—including curved bubble sofas, modern platform beds, storage wardrobes (daraz), dining tables, and wooden temples (mandirs)—can be customized to fit your exact room measurements and interior color palette.'
+      question: 'Can I customize dimensions, fabric, and wood finishes? (साइज र रङ्ग कस्टमाइज मिल्छ?)',
+      answer: 'Yes! All Ashwi Furniture products—including curved bubble sofas, modern platform beds (काठको पलंग / khat), storage wardrobes (3-door sliding daraz / दराज), dining tables, and wooden home mandirs (काठको पूजा मन्दिर)—can be tailored to your room dimensions and interior color palette.'
     },
     {
-      question: 'What materials and warranties are provided?',
-      answer: 'We craft our furniture using seasoned solid Sal wood, engineered hardwood, high-density memory foam, and premium stain-resistant fabrics. All solid frame furniture includes a 5 to 10-year structural warranty.'
+      question: 'What materials, timber, and warranties are provided? (काठ र वारेन्टी कस्तो छ?)',
+      answer: 'We handcraft our furniture using seasoned solid Sal wood (साखुवा काठ), Sheesham/Sissoo (सिसौ), high-resilience memory foam, and premium stain-resistant bouclé/velvet fabrics. All solid frame furniture includes a 5 to 10-year structural frame warranty.'
     },
     {
-      question: 'What if I am not satisfied with the furniture upon delivery?',
-      answer: 'Because of our payment-after-delivery guarantee, if a delivered item does not match your expectations during delivery inspection, you are under no obligation to keep or pay for it. Customer satisfaction is our top priority.'
+      question: 'What if I am not satisfied with the furniture upon delivery? (सामान मन परेन भने के हुन्छ?)',
+      answer: 'Because of our 100% payment-after-delivery guarantee, if a delivered item does not match your expectations during delivery inspection, you are under zero obligation to keep or pay for it. Customer trust and satisfaction in Nepal is our highest priority.'
     }
   ];
 
@@ -88,10 +88,11 @@ const HomePage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Ashwi Furniture Kathmandu | Handcrafted Furniture Nepal - Pay After Delivery"
-        description="Discover luxury curved bubble sofas, solid wood king beds, wardrobes (daraz), dining tables & wooden mandirs at Ashwi Furniture Kathmandu. Pay only after delivery!"
-        keywords="furniture in Kathmandu, furniture Nepal, bubble sofa Kathmandu, wooden bed price Nepal, daraz wardrobe Nepal, home mandir Nepal, tea table Kathmandu, Ashwi Furniture"
+        title="Ashwi Furniture Kathmandu | Handcrafted Furniture Nepal - काठको फर्निचर | Pay After Delivery"
+        description="काठमाडौँ तथा नेपालभर गुणस्तरीय काठको फर्निचर: सोफा सेट, काठको पलंग (beds), दराज (wardrobes), डाइनिङ टेबल र पूजा मन्दिर। 100% Payment After Delivery across Kathmandu, Lalitpur & Bhaktapur. Call/WhatsApp 9860479751."
+        keywords="furniture in Kathmandu, furniture Nepal, bubble sofa Kathmandu, wooden bed price Nepal, daraz wardrobe Nepal, home mandir Nepal, tea table Kathmandu, kaath ko palang, sasto furniture kathmandu, palang design nepal, daraj ko price nepal, ghar ko mandir nepal, sofa set rate nepal, khat ko price kathmandu, furniture pasal kathmandu, sissoo wood furniture nepal, फर्निचर, काठको पलंग, सोफा सेट, दराज, पूजा मन्दिर, डाइनिङ टेबल, Ashwi Furniture"
         url="https://www.ashwifurniture.com/"
+        image="https://www.ashwifurniture.com/og-image.jpg"
         type="website"
         canonicalUrl="https://www.ashwifurniture.com/"
         structuredData={structuredData}
@@ -103,16 +104,21 @@ const HomePage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="inline-flex items-center space-x-2 bg-primary-700 bg-opacity-60 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-primary-500">
-                  <span>✨ 100% Payment After Delivery</span>
+                <div className="inline-flex items-center space-x-2 bg-primary-700 bg-opacity-70 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-primary-500 shadow-sm">
+                  <span>✨ १००% डेलिभरी भएपछि मात्र भुक्तानी (Pay After Delivery)</span>
                 </div>
-                <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                <h1 className="text-4xl md:text-6xl font-bold mb-4">
                   Transform Your Home with
                   <span className="block text-primary-200">Handcrafted Furniture</span>
                 </h1>
-                <p className="text-xl text-primary-100 mb-8 max-w-lg">
-                  Beautiful furniture with high finishing in Kathmandu, Nepal. We take payment only after delivery, ensuring complete peace of mind.
+                <p className="text-lg md:text-xl text-primary-100 mb-4 max-w-lg">
+                  काठमाडौँमा उच्च फिनिसिङ भएको काठको फर्निचर। Beautiful solid wood furniture handcrafted in Kathmandu, Nepal.
                 </p>
+                <div className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium text-primary-200 mb-8 max-w-lg">
+                  <span className="bg-primary-700 bg-opacity-60 px-2.5 py-1 rounded">🚚 उपत्यकाभित्र निःशुल्क डेलिभरी</span>
+                  <span className="bg-primary-700 bg-opacity-60 px-2.5 py-1 rounded">🛡️ ५-१० वर्ष वारेन्टी</span>
+                  <span className="bg-primary-700 bg-opacity-60 px-2.5 py-1 rounded">📞 ९८६०४७९७५१</span>
+                </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     to="/products"

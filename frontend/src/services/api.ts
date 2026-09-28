@@ -146,17 +146,66 @@ const applyFilters = (products: Product[], filters?: FilterOptions): Product[] =
   }
 
   if (filters.search) {
-    const query = filters.search.toLowerCase().trim();
-    result = result.filter(p => 
-      p.name.toLowerCase().includes(query) ||
-      p.description.toLowerCase().includes(query) ||
-      p.short_description.toLowerCase().includes(query) ||
-      p.category.name.toLowerCase().includes(query) ||
-      (p.subcategory && p.subcategory.name.toLowerCase().includes(query)) ||
-      p.material.toLowerCase().includes(query) ||
-      p.color.toLowerCase().includes(query) ||
-      p.sku.toLowerCase().includes(query)
-    );
+    const rawQuery = filters.search.toLowerCase().trim();
+    const queryTokens = rawQuery.split(/\s+/).filter(Boolean);
+
+    // Nepali & Romanized search synonyms map
+    const NEPALI_SEARCH_SYNONYMS: Record<string, string[]> = {
+      palang: ['bed', 'khat', 'storage'],
+      पलंग: ['bed', 'khat', 'storage'],
+      khat: ['bed'],
+      खाट: ['bed'],
+      daraj: ['wardrobe', 'daraz', 'closet'],
+      दराज: ['wardrobe', 'daraz', 'closet'],
+      almari: ['wardrobe', 'daraz'],
+      अलमारी: ['wardrobe', 'daraz'],
+      mandir: ['mandir', 'temple', 'sacred'],
+      मन्दिर: ['mandir', 'temple', 'sacred'],
+      puja: ['mandir', 'temple'],
+      पूजा: ['mandir', 'temple'],
+      sofa: ['sofa', 'couch', 'bubble', 'chesterfield', 'sectional'],
+      सोफा: ['sofa', 'couch', 'bubble', 'chesterfield', 'sectional'],
+      kursi: ['chair', 'armchair'],
+      कुर्सी: ['chair', 'armchair'],
+      mez: ['table', 'dining'],
+      टेबल: ['table', 'dining', 'tea', 'coffee'],
+      dining: ['dining', 'table'],
+      डाइनिङ: ['dining', 'table'],
+      jutta: ['shoe', 'rack'],
+      जुत्ता: ['shoe', 'rack'],
+      kaath: ['wood', 'sal', 'hardwood', 'sheesham'],
+      काठ: ['wood', 'sal', 'hardwood', 'sheesham'],
+      sisau: ['sheesham', 'sissoo', 'wood'],
+      sheesham: ['sheesham', 'sissoo', 'wood'],
+      sal: ['sal', 'hardwood', 'wood'],
+      साखुवा: ['sal', 'hardwood', 'wood'],
+    };
+
+    // Collect all expanded terms
+    const expandedTerms = new Set<string>([rawQuery, ...queryTokens]);
+    queryTokens.forEach(t => {
+      if (NEPALI_SEARCH_SYNONYMS[t]) {
+        NEPALI_SEARCH_SYNONYMS[t].forEach(syn => expandedTerms.add(syn));
+      }
+    });
+
+    result = result.filter(p => {
+      const haystack = [
+        p.name,
+        p.description,
+        p.short_description,
+        p.category.name,
+        p.category.slug,
+        p.subcategory?.name || '',
+        p.subcategory?.slug || '',
+        p.material,
+        p.color,
+        p.sku,
+        ...(p.features || [])
+      ].join(' ').toLowerCase();
+
+      return Array.from(expandedTerms).some(term => haystack.includes(term));
+    });
   }
 
   // Ordering

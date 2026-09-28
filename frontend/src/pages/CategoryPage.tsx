@@ -50,9 +50,10 @@ const CategoryPage: React.FC = () => {
   }
 
   const categoryUrl = `https://www.ashwifurniture.com/category/${category.slug}`;
-  const categoryTitle = `${category.name} Furniture - Shop Quality ${category.name} | Ashwi Furniture`;
-  const categoryDescription = `${category.description} Browse ${category.product_count} products in our ${category.name} collection. Free shipping on orders over $500.`;
-  const categoryImage = category.image || 'https://www.ashwifurniture.com/images/og-image.jpg';
+  const categoryTitle = `${category.name} Furniture Kathmandu Nepal | Ashwi Furniture - Pay After Delivery`;
+  const categoryDescription = `${category.description} Explore handcrafted ${category.name} collection at Ashwi Furniture Kathmandu. 100% Payment After Delivery & free valley doorstep delivery. Call/WhatsApp 9860479751.`;
+  const rawCatImg = category.image || '/og-image.jpg';
+  const categoryImage = rawCatImg.startsWith('http') ? rawCatImg : `https://www.ashwifurniture.com${rawCatImg.startsWith('/') ? '' : '/'}${rawCatImg}`;
 
   // Generate structured data
   const collectionSchema = generateCollectionSchema(category, products.slice(0, 12));
@@ -66,7 +67,7 @@ const CategoryPage: React.FC = () => {
       <SEO
         title={categoryTitle}
         description={categoryDescription}
-        keywords={`${category.name} furniture, ${category.name} decor, buy ${category.name} furniture online, quality ${category.name} furniture, affordable ${category.name} furniture`}
+        keywords={`${category.name} furniture, ${category.name} price in nepal, furniture kathmandu, kaath ko ${category.name.toLowerCase()}, sasto furniture nepal, buy ${category.name} furniture online, pay after delivery nepal`}
         image={categoryImage}
         url={categoryUrl}
         type="website"

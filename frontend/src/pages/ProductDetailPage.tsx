@@ -49,7 +49,8 @@ const ProductDetailPage: React.FC = () => {
   }
 
   const primaryImage = product.primary_image || product.images[0];
-  const productImage = primaryImage?.image_url || primaryImage?.image || 'https://www.ashwifurniture.com/default-product.jpg';
+  const rawImg = primaryImage?.image_url || primaryImage?.image || '/bubblesofa.png';
+  const productImage = rawImg.startsWith('http') ? rawImg : `https://www.ashwifurniture.com${rawImg.startsWith('/') ? '' : '/'}${rawImg}`;
   const productUrl = `https://www.ashwifurniture.com/products/${product.slug}`;
   
   // Generate structured data
@@ -62,12 +63,13 @@ const ProductDetailPage: React.FC = () => {
 
   // Generate SEO meta description
   const metaDescription = product.meta_description || 
-    `${product.short_description || product.description.slice(0, 150)}. ${product.material} material, ${product.finish} finish. Price: ${formatPriceNPR(product.sale_price || product.price)}. ${product.stock_quantity > 0 ? 'In stock' : 'Out of stock'} at Ashwi Furniture.`;
+    `${product.name} at Ashwi Furniture Kathmandu Nepal. ${product.short_description || product.description.slice(0, 120)}. Price: ${formatPriceNPR(product.sale_price || product.price)}. 100% Payment After Delivery across Kathmandu, Lalitpur & Bhaktapur. Call/WhatsApp 9860479751.`;
 
   const metaTitle = product.meta_title || 
-    `${product.name} - ${product.category.name} | Ashwi Furniture`;
+    `${product.name} - ${product.category.name} | Ashwi Furniture Kathmandu Nepal`;
 
-  const keywords = `${product.name}, ${product.category.name}, ${product.subcategory?.name || ''}, ${product.material}, ${product.color}, furniture, home furniture, buy furniture online`;
+  const keywords = `${product.name}, ${product.category.name}, ${product.subcategory?.name || ''}, ${product.material}, ${product.color}, furniture kathmandu, furniture nepal, kaath ko palang, sofa set nepal, daraz price nepal, pay after delivery furniture, 9860479751`;
+
 
   return (
     <>
@@ -209,11 +211,11 @@ const ProductDetailPage: React.FC = () => {
                 </a>
               </div>
               <div className="mt-3 text-xs text-gray-500 flex flex-wrap items-center gap-x-3 gap-y-1">
-                <span>✓ Payment only after delivery</span>
+                <span>✓ Payment only after delivery (डेलिभरी भएपछि भुक्तानी)</span>
                 <span>•</span>
                 <span>✓ Free delivery inside Kathmandu Valley</span>
                 <span>•</span>
-                <span>✓ Custom dimensions available</span>
+                <span>✓ Custom dimensions available (साइज कस्टमाइज)</span>
               </div>
             </div>
           </div>

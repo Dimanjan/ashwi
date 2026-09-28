@@ -1,12 +1,27 @@
 {
   "short_name": "Ashwi Furniture",
-  "name": "Ashwi Furniture - Quality Home Furniture & Decor",
-  "description": "Premium quality furniture for your home - living room, bedroom, dining room, office & outdoor furniture",
+  "name": "Ashwi Furniture - Handcrafted Furniture Kathmandu Nepal",
+  "description": "Premium handcrafted solid wood furniture in Kathmandu, Nepal. Pay only after delivery. Living room, bedroom, dining, and mandirs.",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "64x64 48x48 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
     },
     {
       "src": "logo192.png",
@@ -21,10 +36,11 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#7c3aed",
   "background_color": "#ffffff",
   "categories": ["shopping", "lifestyle"],
   "orientation": "portrait-primary"
 }
+

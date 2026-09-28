@@ -104,10 +104,11 @@ const ProductsPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Shop All Furniture - Quality Home Furniture | Ashwi Furniture"
-        description="Browse our complete collection of premium furniture products for your home. Living room, bedroom, dining room, office & outdoor furniture. Free shipping on orders over $500."
-        keywords="furniture, home furniture, buy furniture online, quality furniture, affordable furniture, furniture store"
+        title="Shop All Furniture in Kathmandu, Nepal | Ashwi Furniture - Pay After Delivery"
+        description="Explore handcrafted curved bubble sofas, solid wood beds, storage wardrobes (daraz), dining tables & mandirs at Ashwi Furniture Kathmandu. 100% Pay After Delivery. Call/WhatsApp 9860479751."
+        keywords="furniture in kathmandu, furniture nepal, kaath ko palang, sofa set price in nepal, daraz wardrobe nepal, ghar ko mandir nepal, buy furniture online nepal, pay after delivery nepal"
         url="https://www.ashwifurniture.com/products"
+        image="https://www.ashwifurniture.com/og-image.jpg"
         type="website"
         canonicalUrl="https://www.ashwifurniture.com/products"
       />

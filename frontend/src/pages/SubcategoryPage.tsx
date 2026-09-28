@@ -50,9 +50,10 @@ const SubcategoryPage: React.FC = () => {
   }
 
   const subcategoryUrl = `https://www.ashwifurniture.com/subcategory/${subcategory.slug}`;
-  const subcategoryTitle = `${subcategory.name} - ${subcategory.category.name} Furniture | Ashwi Furniture`;
-  const subcategoryDescription = `${subcategory.description} Shop ${subcategory.product_count} quality ${subcategory.name} products. Free shipping on orders over $500.`;
-  const subcategoryImage = subcategory.image || subcategory.category.image || 'https://www.ashwifurniture.com/images/og-image.jpg';
+  const subcategoryTitle = `${subcategory.name} - ${subcategory.category.name} in Kathmandu Nepal | Ashwi Furniture`;
+  const subcategoryDescription = `${subcategory.description} Shop ${subcategory.product_count} quality ${subcategory.name} at Ashwi Furniture Kathmandu. 100% Payment After Delivery & free valley doorstep delivery. Call/WhatsApp 9860479751.`;
+  const rawSubImg = subcategory.image || subcategory.category.image || '/og-image.jpg';
+  const subcategoryImage = rawSubImg.startsWith('http') ? rawSubImg : `https://www.ashwifurniture.com${rawSubImg.startsWith('/') ? '' : '/'}${rawSubImg}`;
 
   // Generate structured data
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -66,7 +67,7 @@ const SubcategoryPage: React.FC = () => {
       <SEO
         title={subcategoryTitle}
         description={subcategoryDescription}
-        keywords={`${subcategory.name}, ${subcategory.category.name} furniture, ${subcategory.name} furniture, buy ${subcategory.name} online`}
+        keywords={`${subcategory.name}, ${subcategory.name} price in nepal, ${subcategory.category.name} furniture, buy ${subcategory.name} online kathmandu, pay after delivery furniture nepal, 9860479751`}
         image={subcategoryImage}
         url={subcategoryUrl}
         type="website"

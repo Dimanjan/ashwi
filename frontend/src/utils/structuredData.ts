@@ -5,17 +5,32 @@ export const generateOrganizationSchema = () => {
     '@context': 'https://schema.org',
     '@type': 'FurnitureStore',
     name: 'Ashwi Furniture',
-    description: 'We offer beautiful furniture with high finishing in Kathmandu, Nepal. We take payment only after delivery.',
+    alternateName: ['अश्वी फर्निचर', 'Ashwi Furniture Nepal', 'Ashwi Furniture Pasal Kathmandu'],
+    description: 'काठमाडौँ तथा नेपालभर गुणस्तरीय काठको फर्निचर: सोफा सेट, काठको पलंग, दराज, डाइनिङ टेबल र पूजा मन्दिर। डेलिभरी भएपछि मात्र पैसा भुक्तानी (100% Payment After Delivery).',
     url: 'https://www.ashwifurniture.com',
-    logo: 'https://www.ashwifurniture.com/logo512.png',
-    image: 'https://www.ashwifurniture.com/bubblesofa.png',
+    inLanguage: ['en-NP', 'ne-NP'],
+    knowsLanguage: ['ne', 'en'],
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://www.ashwifurniture.com/logo512.png',
+      width: '512',
+      height: '512',
+      caption: 'Ashwi Furniture Official Brand Logo',
+    },
+    image: {
+      '@type': 'ImageObject',
+      url: 'https://www.ashwifurniture.com/og-image.jpg',
+      width: '1200',
+      height: '630',
+      caption: 'Ashwi Furniture Handcrafted Furniture Kathmandu Nepal',
+    },
     telephone: '+977-986-0479751',
     email: 'info@ashwifurniture.com.np',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Ring Road',
-      addressLocality: 'Kathmandu',
-      addressRegion: 'Bagmati Province',
+      addressLocality: 'Kathmandu (काठमाडौँ)',
+      addressRegion: 'Bagmati Province (बागमती प्रदेश)',
       postalCode: '44600',
       addressCountry: 'NP',
     },
@@ -25,8 +40,8 @@ export const generateOrganizationSchema = () => {
       longitude: '85.3240',
     },
     currenciesAccepted: 'NPR',
-    paymentAccepted: 'Cash on Delivery, Fonepay, Bank Transfer',
-    priceRange: 'रुरु',
+    paymentAccepted: 'Cash on Delivery, Fonepay QR, eSewa, Bank Transfer',
+    priceRange: 'रू रू रू',
     sameAs: [
       'https://www.facebook.com/profile.php?id=61579049243889',
       'https://www.instagram.com/ashwifurniture',
@@ -36,22 +51,32 @@ export const generateOrganizationSchema = () => {
     areaServed: [
       {
         '@type': 'City',
-        name: 'Kathmandu',
+        name: 'Kathmandu (काठमाडौँ)',
         sameAs: 'https://www.wikidata.org/wiki/Q1080'
       },
       {
         '@type': 'City',
-        name: 'Lalitpur',
+        name: 'Lalitpur / Patan (ललितपुर)',
         sameAs: 'https://www.wikidata.org/wiki/Q38789'
       },
       {
         '@type': 'City',
-        name: 'Bhaktapur',
+        name: 'Bhaktapur (भक्तपुर)',
         sameAs: 'https://www.wikidata.org/wiki/Q2516'
       },
       {
+        '@type': 'City',
+        name: 'Pokhara (पोखरा)',
+        sameAs: 'https://www.wikidata.org/wiki/Q6640'
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Chitwan (चितवन)',
+        sameAs: 'https://www.wikidata.org/wiki/Q722744'
+      },
+      {
         '@type': 'Country',
-        name: 'Nepal',
+        name: 'Nepal (नेपाल)',
         sameAs: 'https://www.wikidata.org/wiki/Q837'
       }
     ],
@@ -68,17 +93,21 @@ export const generateOrganizationSchema = () => {
 
 export const generateProductSchema = (product: Product) => {
   const price = product.sale_price || product.price;
+  const rawImage = product.primary_image?.image_url || product.primary_image?.image || product.images[0]?.image_url || product.images[0]?.image || '/bubblesofa.png';
+  const resolvedImage = rawImage.startsWith('http') ? rawImage : `https://www.ashwifurniture.com${rawImage.startsWith('/') ? '' : '/'}${rawImage}`;
   
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
     description: product.description,
-    image: product.primary_image?.image_url || product.images[0]?.image_url,
+    inLanguage: ['en-NP', 'ne-NP'],
+    image: resolvedImage,
     sku: product.sku,
     brand: {
       '@type': 'Brand',
       name: 'Ashwi Furniture',
+      logo: 'https://www.ashwifurniture.com/logo512.png',
     },
     offers: {
       '@type': 'Offer',
@@ -94,6 +123,7 @@ export const generateProductSchema = (product: Product) => {
         '@type': 'Organization',
         name: 'Ashwi Furniture',
         url: 'https://www.ashwifurniture.com',
+        logo: 'https://www.ashwifurniture.com/logo512.png',
       },
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
@@ -242,15 +272,17 @@ export const generateLocalBusinessSchema = () => {
     '@type': 'LocalBusiness',
     '@id': 'https://www.ashwifurniture.com/#localbusiness',
     name: 'Ashwi Furniture',
-    description: 'We offer beautiful handcrafted furniture with high finishing in Kathmandu, Nepal. We take payment only after delivery.',
+    alternateName: ['अश्वी फर्निचर', 'Ashwi Furniture Nepal', 'Ashwi Furniture Pasal Kathmandu'],
+    description: 'काठमाडौँ तथा नेपालभर गुणस्तरीय काठको फर्निचर: सोफा सेट, काठको पलंग, दराज, डाइनिङ टेबल र पूजा मन्दिर। डेलिभरी भएपछि मात्र पैसा भुक्तानी।',
     url: 'https://www.ashwifurniture.com',
+    inLanguage: ['en-NP', 'ne-NP'],
     telephone: '+977-986-0479751',
     email: 'info@ashwifurniture.com.np',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Ring Road',
-      addressLocality: 'Kathmandu',
-      addressRegion: 'Bagmati Province',
+      addressLocality: 'Kathmandu (काठमाडौँ)',
+      addressRegion: 'Bagmati Province (बागमती प्रदेश)',
       postalCode: '44600',
       addressCountry: 'NP',
     },
@@ -260,10 +292,22 @@ export const generateLocalBusinessSchema = () => {
       longitude: '85.3240',
     },
     currenciesAccepted: 'NPR',
-    paymentAccepted: 'Cash on Delivery, Fonepay, Bank Transfer',
-    priceRange: 'रुरु',
-    image: 'https://www.ashwifurniture.com/bubblesofa.png',
-    logo: 'https://www.ashwifurniture.com/logo512.png',
+    paymentAccepted: 'Cash on Delivery, Fonepay QR, eSewa, Bank Transfer',
+    priceRange: 'रू रू रू',
+    image: {
+      '@type': 'ImageObject',
+      url: 'https://www.ashwifurniture.com/og-image.jpg',
+      width: '1200',
+      height: '630',
+      caption: 'Ashwi Furniture Showroom Kathmandu',
+    },
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://www.ashwifurniture.com/logo512.png',
+      width: '512',
+      height: '512',
+      caption: 'Ashwi Furniture Official Brand Logo',
+    },
   };
 };
 

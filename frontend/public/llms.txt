@@ -52,8 +52,29 @@ Ashwi Furniture is a Kathmandu-based furniture manufacturer and showroom offerin
 ### Outdoor
 - [All-Weather Wicker Patio Lounge Set](https://www.ashwifurniture.com/products/all-weather-wicker-patio-lounge-set): NPR 49000 (was NPR 58000) - UV-resistant resin wicker set with 4 cushioned chairs and tempered glass coffee table....
 
+## Nepali Language & Local Market Context (नेपाली भाषा, बजार र शब्दावली)
+Ashwi Furniture (अश्वी फर्निचर) serves customers across Nepal with a primary focus on the Kathmandu Valley (काठमाडौँ, ललितपुर, भक्तपुर).
+
+### Common Nepali Furniture Terminology
+- **Bed / Khat**: 'पलंग' (Palang), 'खाट' (Khat), 'हाइड्रोलिक स्टोरेज पलंग' (Hydraulic Storage Bed)
+- **Sofa**: 'सोफा सेट' (Sofa Set), 'कर्भ्ड बबल सोफा' (Curved Bubble Sofa), 'एल-सेप सोफा' (L-Shape Sectional)
+- **Wardrobe / Cupboard**: 'दराज' (Daraz), '३-ढोके स्लाइडिङ दराज' (3-Door Sliding Wardrobe)
+- **Pooja Unit**: 'काठको पूजा मन्दिर' (Handcrafted Wooden Mandir), 'घरको मन्दिर' (Home Mandir)
+- **Dining**: 'डाइनिङ टेबल' (Dining Table & Chairs)
+- **Wood / Timber Types**: 'साल / साखुवा' (Sal / Sakhuwa), 'सिसौ / शीशम' (Sissoo / Sheesham), 'सागवान' (Teak)
+
+### Core Trust & Policies for Nepali Shoppers
+- **100% Pay After Delivery (डेलिभरी पश्चात मात्र भुक्तानी)**: Customers never need to pay in advance. Payment is made only after inspecting the finished product at their home.
+- **Accepted Payments**: Cash on Delivery (क्यास अन डेलिभरी), Fonepay QR (फोनपे), eSewa (इसेवा), Bank Transfer.
+- **Free Valley Delivery**: Free delivery and technician assembly across Kathmandu, Lalitpur, and Bhaktapur within 24 to 72 hours.
+- **Warranty**: 5 to 10 years structural frame warranty on all solid wood furniture.
+- **Direct Orders & Inquiries**: Call or WhatsApp `+977 986-0479751`.
+
 ## Useful Links
 - [Full Machine-Readable Catalog (JSON)](https://www.ashwifurniture.com/catalog.json)
 - [Complete Product Catalog (Web)](https://www.ashwifurniture.com/products)
+- [Official Brand Logo (512x512)](https://www.ashwifurniture.com/logo512.png)
+- [Social Share Preview Card (1200x630)](https://www.ashwifurniture.com/og-image.jpg)
 - [XML Sitemap](https://www.ashwifurniture.com/sitemap.xml)
 - [Detailed LLM Specifications](https://www.ashwifurniture.com/llms-full.txt)
+

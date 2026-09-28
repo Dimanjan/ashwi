@@ -4,10 +4,13 @@
  */
 
 export const SITE_NAME = 'Ashwi Furniture';
+export const SITE_NAME_NE = 'अश्वी फर्निचर';
 export const SITE_URL = 'https://www.ashwifurniture.com';
-export const SITE_DESCRIPTION = 'Discover premium handcrafted furniture at Ashwi Furniture Kathmandu. Shop curved bubble sofas, solid wood beds, wardrobes, and mandirs with payment after delivery.';
-export const DEFAULT_IMAGE = `${SITE_URL}/bubblesofa.png`;
+export const SITE_DESCRIPTION = 'काठमाडौँ तथा नेपालभर गुणस्तरीय काठको फर्निचर: सोफा सेट, काठको पलंग (beds), दराज (wardrobes), डाइनिङ टेबल र पूजा मन्दिर। 100% Payment After Delivery across Kathmandu, Lalitpur & Bhaktapur. Call/WhatsApp 9860479751.';
+export const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
+export const BRAND_LOGO = `${SITE_URL}/logo512.png`;
 export const TWITTER_HANDLE = '@ashwifurniture';
+
 
 /**
  * Generate a clean, SEO-friendly title
