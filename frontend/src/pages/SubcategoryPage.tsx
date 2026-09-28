@@ -4,6 +4,7 @@ import SEO from '../components/SEO';
 import { subcategoriesApi } from '../services/api';
 import { Subcategory, Product, ProductListResponse } from '../types';
 import ProductCard from '../components/ProductCard';
+import OptimizedImage from '../components/OptimizedImage';
 import { generateBreadcrumbSchema } from '../utils/structuredData';
 
 const SubcategoryPage: React.FC = () => {
@@ -88,11 +89,11 @@ const SubcategoryPage: React.FC = () => {
         <div className="mb-8">
           {subcategory.image && (
             <div className="w-full h-64 md:h-80 rounded-2xl overflow-hidden mb-6 shadow-md border border-gray-100">
-              <img 
+              <OptimizedImage 
                 src={subcategory.image} 
                 alt={`${subcategory.name} hero`}
                 className="w-full h-full object-cover"
-                loading="eager"
+                priority={true}
               />
             </div>
           )}

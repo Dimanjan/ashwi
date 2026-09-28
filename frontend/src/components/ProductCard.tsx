@@ -4,6 +4,7 @@ import { Product } from '../types';
 import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
 import { StarIcon } from '@heroicons/react/24/outline';
 import { formatPriceNPR } from '../utils/currency';
+import OptimizedImage from './OptimizedImage';
 
 interface Props {
   product: Product;
@@ -20,7 +21,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
       <Link to={`/products/${product.slug}`} className="block">
         <div className="relative aspect-[4/3] bg-gray-100">
           {primaryImage ? (
-            <img
+            <OptimizedImage
               src={primaryImage.image_url || primaryImage.image}
               alt={primaryImage.alt_text || product.name}
               className="w-full h-full object-cover"

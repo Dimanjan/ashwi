@@ -4,6 +4,7 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 import ProductCard from '../components/ProductCard';
 import SEO from '../components/SEO';
+import OptimizedImage from '../components/OptimizedImage';
 import { productsApi, categoriesApi } from '../services/api';
 import { Product, Category } from '../types';
 import { 
@@ -168,11 +169,10 @@ const HomePage: React.FC = () => {
                   <div className="bg-gray-50 rounded-lg p-8 text-center hover:bg-primary-50 transition-colors shadow-sm hover:shadow-md">
                     <div className="w-24 h-24 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden group-hover:bg-primary-200 transition-colors border-2 border-primary-200">
                       {category.image ? (
-                        <img 
+                        <OptimizedImage 
                           src={category.image} 
                           alt={`${category.name} collection`}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                          loading="lazy"
                         />
                       ) : (
                         <span className="text-3xl">

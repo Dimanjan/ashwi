@@ -6,6 +6,7 @@ import { Product } from '../types';
 import { formatPriceNPR } from '../utils/currency';
 import { generateProductSchema, generateBreadcrumbSchema } from '../utils/structuredData';
 import { trackProductView, trackEvent } from '../utils/telemetry';
+import OptimizedImage from '../components/OptimizedImage';
 
 const ProductDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -102,11 +103,11 @@ const ProductDetailPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="bg-white rounded-lg shadow p-4">
             {primaryImage ? (
-              <img 
+              <OptimizedImage 
                 src={primaryImage.image_url || primaryImage.image} 
                 alt={primaryImage.alt_text || product.name}
                 className="w-full h-96 object-cover rounded" 
-                loading="lazy"
+                priority={true}
               />
             ) : (
               <div className="w-full h-96 bg-gray-100 rounded flex items-center justify-center text-gray-400">No image</div>
