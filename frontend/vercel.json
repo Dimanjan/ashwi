@@ -16,11 +16,21 @@
     },
     {
       "src": "/static/(.*)",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" },
       "dest": "/static/$1"
     },
     {
-      "src": "/(.*\\.(jpg|jpeg|png|gif|svg|ico|webp|woff|woff2|ttf|otf|css|js|json|xml|txt))",
+      "src": "/(.*\\.(jpg|jpeg|png|gif|svg|ico|webp|woff|woff2|ttf|otf))",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" },
       "dest": "/$1"
+    },
+    {
+      "src": "/(sitemap\\.xml|robots\\.txt|llms\\.txt|llms-full\\.txt|manifest\\.json|catalog\\.json)",
+      "headers": { "cache-control": "public, max-age=86400, must-revalidate" },
+      "dest": "/$1"
+    },
+    {
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
