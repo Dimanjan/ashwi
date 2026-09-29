@@ -137,7 +137,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="text-center mb-6">
             <h3 className="text-lg font-semibold text-white mb-2">Technology Partners</h3>
-            <p className="text-gray-400 text-sm">Powered by cutting-edge AI and web technologies</p>
+            <p className="text-gray-400 text-sm">Powered by modern AI and web technologies</p>
           </div>
           
           <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">

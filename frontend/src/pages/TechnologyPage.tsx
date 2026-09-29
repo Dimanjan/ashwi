@@ -7,7 +7,7 @@ const TechnologyPage: React.FC = () => {
     <>
       <SEO
         title="Technology & AI Solutions - Ashwi Furniture"
-        description="Discover how Ashwi Furniture leverages cutting-edge AI technology and web development solutions from Sajedar to provide exceptional customer experience and 24/7 support."
+        description="Discover how Ashwi Furniture leverages modern AI technology and web development solutions from Sajedar to provide dependable customer experience and 24/7 support."
         keywords="AI technology, chatbot solutions, web development, customer support automation, Sajedar, Ashwi Furniture technology"
         url="https://www.ashwifurniture.com/technology"
         type="website"
@@ -39,7 +39,7 @@ const TechnologyPage: React.FC = () => {
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Ashwi Furniture has partnered with Sajedar, a leading AI Agent Builder Agency, 
-                to bring you cutting-edge technology solutions that enhance your shopping experience.
+                to bring you modern technology solutions that enhance your shopping experience.
               </p>
             </div>
 

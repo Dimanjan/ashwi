@@ -66,7 +66,7 @@ const HomePage: React.FC = () => {
     },
     {
       question: 'Can I customize dimensions, fabric, and wood finishes? (साइज र रङ्ग कस्टमाइज मिल्छ?)',
-      answer: 'Yes! All Ashwi Furniture products—including curved bubble sofas, modern platform beds (काठको पलंग / khat), storage wardrobes (3-door sliding daraz / दराज), dining tables, and wooden home mandirs (काठको पूजा मन्दिर)—can be tailored to your room dimensions and interior color palette.'
+      answer: 'Yes! All Ashwi Furniture products (including curved bubble sofas, modern platform beds, storage wardrobes, dining tables, and wooden home mandirs) can be tailored to your room dimensions and interior color palette.'
     },
     {
       question: 'What materials, timber, and warranties are provided? (काठ र वारेन्टी कस्तो छ?)',
@@ -332,10 +332,10 @@ const HomePage: React.FC = () => {
         <section className="py-16 bg-primary-600 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">
-              Ready to Transform Your Space?
+              Upgrade Your Home with Solid Wood Furniture
             </h2>
             <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-              Join thousands of satisfied customers who have created their dream homes with our furniture.
+              Inspect your furniture at your doorstep across Kathmandu Valley before paying.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
