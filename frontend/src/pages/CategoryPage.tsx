@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { categoriesApi } from '../services/api';
 import { Category, Product, ProductListResponse } from '../types';
@@ -117,6 +117,60 @@ const CategoryPage: React.FC = () => {
             ))}
           </div>
         )}
+
+        {/* Localized Category Buying Advice & SEO Content Block */}
+        <section className="mt-16 bg-white rounded-2xl p-6 sm:p-10 border border-gray-100 shadow-xs">
+          <div className="max-w-4xl">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
+              Buying {category.name} Furniture in Kathmandu, Nepal
+            </h2>
+            <p className="text-sm text-gray-600 leading-relaxed mb-4">
+              At Ashwi Furniture, every piece of {category.name.toLowerCase()} furniture is crafted using seasoned hardwood timbers such as Sisau (Sheesham) and Sal (Sakhuwa), built specifically to withstand the humidity shifts and climate of Kathmandu Valley. Whether you reside in an apartment in Lalitpur or an independent home in Bhaktapur, our team delivers and provides complimentary room assembly.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4 border-y border-gray-100 my-6">
+              <div className="text-xs">
+                <span className="font-bold text-gray-900 block mb-1">100% Pay After Delivery</span>
+                <span className="text-gray-500">Inspect the joinery, finish, and cushioning before paying.</span>
+              </div>
+              <div className="text-xs">
+                <span className="font-bold text-gray-900 block mb-1">Valley Doorstep Delivery</span>
+                <span className="text-gray-500">Free delivery and setup across Kathmandu, Lalitpur, and Bhaktapur.</span>
+              </div>
+              <div className="text-xs">
+                <span className="font-bold text-gray-900 block mb-1">Direct Workshop Support</span>
+                <span className="text-gray-500">Direct WhatsApp access to master joiners for custom dimensions.</span>
+              </div>
+            </div>
+            <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
+              <div className="text-xs text-gray-500">
+                Want detailed comparisons? Read our in-depth{' '}
+                <Link to="/guides" className="text-primary-600 font-bold hover:underline">
+                  Furniture Buying Guides
+                </Link>
+                .
+              </div>
+              <div className="flex gap-3">
+                <a
+                  href="tel:+9779860479751"
+                  onClick={() => trackEvent('phone_call_click', { location: 'category_footer' })}
+                  className="text-xs font-bold text-gray-700 hover:text-primary-600"
+                >
+                  📞 9860479751
+                </a>
+                <span className="text-gray-300">·</span>
+                <a
+                  href={`https://wa.me/9779860479751?text=Hi%20Ashwi%20Furniture,%20I%20am%20browsing%20${encodeURIComponent(category.name)}%20furniture`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent('whatsapp_click', { location: 'category_footer' })}
+                  className="text-xs font-bold text-emerald-600 hover:text-emerald-700"
+                >
+                  💬 WhatsApp Order
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );
