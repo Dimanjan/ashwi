@@ -1,0 +1,463 @@
+export interface GuideSection {
+  id: string;
+  heading: string;
+  content: string[];
+}
+
+export interface GuideFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface GuideArticle {
+  slug: string;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  publishedDate: string;
+  updatedDate: string;
+  readingTime: string;
+  category: string;
+  heroImage: string;
+  excerpt: string;
+  author: string;
+  targetKeywords: string[];
+  sections: GuideSection[];
+  faqs: GuideFAQ[];
+  relatedProductSlugs: string[];
+}
+
+export const GUIDES: GuideArticle[] = [
+  {
+    slug: 'best-wood-for-furniture-in-nepal',
+    title: 'Best Wood for Furniture in Nepal: Sisau, Sal, Teak and Engineered Timber Compared',
+    metaTitle: 'Best Wood for Furniture in Nepal (2025) - Sisau, Sal vs Teak | Ashwi',
+    metaDescription: 'Complete guide to choosing furniture wood in Nepal. Comparing Sisau (Sheesham), Sal (Sakhuwa), Burma Teak, and engineered woods for Kathmandu weather, humidity, and termites.',
+    publishedDate: '2025-02-15',
+    updatedDate: '2025-03-01',
+    readingTime: '8 min read',
+    category: 'Materials & Wood Guide',
+    heroImage: '/bed.jpeg',
+    excerpt: 'Selecting the right timber decides whether your bed, dining table, or wardrobe lasts 3 decades or begins warping after two monsoon seasons. Here is our direct comparison based on Kathmandu workshop experience.',
+    author: 'Ashwi Master Joiners & Production Team',
+    targetKeywords: [
+      'best wood for furniture in nepal',
+      'sisau wood price in nepal',
+      'sal vs sisau wood nepal',
+      'teak wood furniture kathmandu',
+      'furniture timber kathmandu valley',
+      'kaath ko palang nepal'
+    ],
+    sections: [
+      {
+        id: 'why-timber-choice-matters-in-kathmandu',
+        heading: 'Why Timber Selection Is Different in Kathmandu Valley',
+        content: [
+          'Kathmandu experiences intense seasonal humidity swings. During the monsoon months between June and September, indoor relative humidity regularly crosses 80%. In winter, it plummets below 35%. Poorly seasoned timber will absorb moisture during the rains and swell, making wardrobe doors stick. In the dry winter, unseasoned wood shrinks and splits along the grain.',
+          'Termites (धमिरा) and wood-boring beetles also thrive in the sub-tropical soil across Kathmandu, Lalitpur, and Bhaktapur. When investing Rs. 40,000 to Rs. 100,000 in solid wood home furniture, knowing the timber grain, density, and seasoning process protects your money.'
+        ]
+      },
+      {
+        id: 'sisau-sheesham-hardwood',
+        heading: '1. Sisau (Indian Rosewood / Sheesham) - The Best Balance for Indoor Furniture',
+        content: [
+          'Sisau (Dalbergia sissoo), commercially called Sheesham or Indian Rosewood, is the most popular premium hardwood for living room and bedroom furniture in Nepal.',
+          'Key Advantages: Dense interlocking grain that resists splitting. Rich golden-brown to deep chestnut tones with natural dark marbling. It takes polyurethane, lacquer, and natural oil finishes cleanly.',
+          'Best Used For: King beds, hydraulic storage beds, dining tables, coffee tables, and executive desks.',
+          'Price Range: High-grade seasoned Sisau costs around Rs. 4,500 to Rs. 6,500 per cubic foot (cft) in raw log form, placing finished furniture in the premium-affordable tier.'
+        ]
+      },
+      {
+        id: 'sal-sakhuwa-timber',
+        heading: '2. Sal Wood (Sakhuwa / Shorea Robusta) - Indestructible Structural Timber',
+        content: [
+          'Sal (Shorea robusta), locally known as Sakhuwa, is one of the heaviest and most durable hardwoods in South Asia. Freshly cut Sal is light brown, darkening to dark brown with age.',
+          'Key Advantages: Naturally saturated with protective resins that make it virtually immune to termites and rot, even under damp conditions. It can withstand massive mechanical loads.',
+          'Drawbacks: Sal is extremely difficult to plane and carve because of its immense fiber density. It does not take delicate stains easily and is prone to surface checking if exposed to direct indoor heating.',
+          'Best Used For: Door and window frames (chaukhat), main building structural columns, heavy garden benches, and bed load-bearing beams.'
+        ]
+      },
+      {
+        id: 'teak-wood-burma-sagwan',
+        heading: '3. Teak Wood (Sagwan) - The Standard for Carvings and Longevity',
+        content: [
+          'Teak (Tectona grandis) is renowned for its high natural silica and oil content. It is soft enough for intricate floral hand-carvings yet resistant to warping.',
+          'Key Advantages: Exceptionally stable across dry and wet seasons. Does not contract or expand noticeably once kiln-seasoned.',
+          'Best Used For: Sacred home mandirs, ornate heritage bed headboards, luxury dining armchairs, and outdoor patio furniture.',
+          'Price Range: Authentic mature teak is the most expensive timber option in Nepal, frequently priced at Rs. 8,000 to Rs. 14,000 per cft.'
+        ]
+      },
+      {
+        id: 'engineered-wood-vs-solid-wood',
+        heading: '4. Engineered Woods: HDHMR, Plywood vs Solid Wood',
+        content: [
+          'Engineered wood has developed rapidly. However, not all boards are equal:',
+          'MDF and Particle Board: Highly vulnerable to water. Spilling a glass of water on standard particle board in Kathmandu causes the edge to swell permanently within 48 hours.',
+          'BWP Marine Grade Plywood & HDHMR (High Density High Moisture Resistance): Excellent for flat structural surfaces like sliding wardrobe carcasses, inner bed base sheets, and kitchen cabinets. When laminated or veneered properly, HDHMR resists humidity better than poorly seasoned low-cost pine.'
+        ]
+      },
+      {
+        id: 'timber-comparison-table',
+        heading: 'Direct Comparison: Timber Specifications at a Glance',
+        content: [
+          'Sisau (Sheesham): Termite Resistance High | Moisture Stability High (when seasoned) | Workability Excellent | Best for Beds, Sofas, Dining Tables.',
+          'Sal (Sakhuwa): Termite Resistance Extreme | Moisture Stability Medium | Workability Tough | Best for Door Frames, Bed Under-Frames.',
+          'Teak (Sagwan): Termite Resistance Very High | Moisture Stability Exceptional | Workability Best | Best for Mandirs, Ornate Carved Sets.',
+          'Pine (Salla): Termite Resistance Low | Moisture Stability Low | Workability Very Easy | Best for Temporary low-cost furniture.'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'Which wood is best for a bed in Kathmandu?',
+        answer: 'Seasoned Sisau (Sheesham) is the optimal choice for beds in Kathmandu. It offers the ideal balance of heavy weight, resistance to mattress sagging, and resistance to seasonal warping.'
+      },
+      {
+        question: 'How do I know if the wood is genuinely seasoned?',
+        answer: 'Properly seasoned wood feels dry and balanced in temperature. Tap the wood with your knuckles; seasoned wood produces a clear resonant knock, whereas unseasoned wet timber gives a dull thud. Moisture meters should read under 12% to 14% for Kathmandu climate.'
+      },
+      {
+        question: 'Does Ashwi Furniture offer solid wood beds with cash on delivery?',
+        answer: 'Yes. All our solid timber beds and furniture are delivered directly to your room in Kathmandu, Lalitpur, and Bhaktapur with 100% Payment After Delivery. You inspect the joinery and finish before paying.'
+      }
+    ],
+    relatedProductSlugs: [
+      'heritage-solid-wood-king-bed',
+      'smart-hydraulic-lift-storage-bed',
+      'solid-wood-extendable-dining-table',
+      'minimalist-solid-wood-center-tea-table'
+    ]
+  },
+  {
+    slug: 'hydraulic-storage-bed-buying-guide-nepal',
+    title: 'Hydraulic Storage Bed Buying Guide in Nepal: Sizes, Pistons, and Room Access',
+    metaTitle: 'Hydraulic Storage Bed Buying Guide Nepal (2025) | Ashwi Furniture',
+    metaDescription: 'Everything you must know before buying a hydraulic gas-lift bed in Kathmandu: piston capacity (100kg vs 150kg), mattress dimensions (King vs Queen), and narrow staircase logistics.',
+    publishedDate: '2025-02-18',
+    updatedDate: '2025-03-02',
+    readingTime: '7 min read',
+    category: 'Bedroom Guides',
+    heroImage: '/bed_with_storage.jpeg',
+    excerpt: 'Hydraulic beds unlock over 800 liters of dust-free storage right under your mattress. Here is how to choose the right piston weight, bed frame, and avoid delivery day disasters on Kathmandu staircases.',
+    author: 'Ashwi Engineering & Installation Team',
+    targetKeywords: [
+      'hydraulic bed nepal',
+      'storage bed kathmandu price',
+      'hydraulic khat nepal',
+      'gas lift bed price nepal',
+      'king size bed storage kathmandu',
+      'palang with box nepal'
+    ],
+    sections: [
+      {
+        id: 'what-is-a-hydraulic-storage-bed',
+        heading: 'What Is a Hydraulic Gas-Lift Bed and How Does It Work?',
+        content: [
+          'A hydraulic bed uses heavy-duty gas pistons (pneumatic cylinders) mounted on both sides of the inner sub-frame. When you lift the mattress base using a fabric pull loop, the compressed nitrogen inside the pistons expands, carrying 90% of the mattress weight.',
+          'Unlike manual wooden plank beds where you must remove your mattress and bedsheets to reach extra blankets, a hydraulic bed lifts smoothly with one hand while your duvet and pillows stay in place.'
+        ]
+      },
+      {
+        id: 'piston-ratings-and-capacities',
+        heading: 'Understanding Piston Ratings: Why Cylinder Power Matters',
+        content: [
+          'The most common defect in low-cost imported hydraulic beds is mismatched gas struts. Gas pistons are rated in Newtons (N) or kilograms (kg) of lifting force:',
+          '100 kg to 120 kg (1000N - 1200N): Built for lightweight 4-inch to 6-inch foam mattresses.',
+          '150 kg to 175 kg (1500N - 1750N): Required for 8-inch to 10-inch pocket spring or orthopedic coir mattresses. If you install an under-powered 100kg cylinder under a heavy orthopedic mattress, the bed will refuse to stay open when lifted.',
+          'At Ashwi Furniture, we calibrate our hydraulic systems with high-pressure nitrogen cylinders rated for over 15,000 opening cycles.'
+        ]
+      },
+      {
+        id: 'nepali-standard-bed-sizes',
+        heading: 'Standard Bed Dimensions in Nepal: King vs Queen vs Custom',
+        content: [
+          'Before ordering, measure your bedroom and existing mattress carefully:',
+          'King Size: 72 inches width x 78 inches length (6 feet by 6.5 feet). Best for master bedrooms with at least 11 x 12 feet floor space.',
+          'Queen Size: 60 inches width x 78 inches length (5 feet by 6.5 feet). The sweet spot for apartments in Sanepa, Jhamsikhel, and modern housing colonies.',
+          'Double / Single: 48 inches x 78 inches or 36 inches x 75 inches for guest rooms and children bedrooms.'
+        ]
+      },
+      {
+        id: 'kathmandu-staircase-and-door-logistics',
+        heading: 'The Kathmandu Staircase Test: Flat-Pack Assembly Matters',
+        content: [
+          'Traditional Nepali houses and city apartments in locations like Thamel, Baneshwor, or Patan often feature narrow dog-leg staircases and 30-inch doorways.',
+          'Never buy a pre-welded, monolithic storage bed frame that cannot be broken down. It will get stuck between the ground floor and first floor landing.',
+          'Our Smart Hydraulic Beds are constructed with modular knock-down engineering. The headboard, side rails, footboard, and pneumatic steel sub-frames arrive separately. Our technicians carry the modules upstairs and complete full bolt-locked assembly inside your bedroom in under 45 minutes.'
+        ]
+      },
+      {
+        id: 'maintenance-and-longevity',
+        heading: 'Cleaning and Long-Term Maintenance',
+        content: [
+          'Store seasonal quilts, heavy blankets (sirak-dasna), and suitcases inside fabric organizer boxes to keep them 100% dust-free.',
+          'Never leave the hydraulic mechanism open without a mattress on top; the strong gas pressure can bend empty frame hinges if forced down.',
+          'Wipe the steel piston rods once a year with a dry microfiber cloth to keep dust away from the rubber seals.'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'Can the hydraulic bed lift easily with an 8-inch spring mattress on it?',
+        answer: 'Yes. Our pistons are matched to support heavy spring and memory foam mattresses. A gentle upward pull lifts the base, and it locks safely in the open position until you pull it back down.'
+      },
+      {
+        question: 'How much storage volume does a king hydraulic bed offer?',
+        answer: 'A standard 72x78 inch king hydraulic bed provides approximately 820 liters of usable storage space, equivalent to the capacity of a full double-door wardrobe.'
+      },
+      {
+        question: 'Who installs the bed at my house?',
+        answer: 'Our professional installation team handles free delivery and full assembly in your bedroom across Kathmandu, Lalitpur, and Bhaktapur. You pay only after inspecting the bed.'
+      }
+    ],
+    relatedProductSlugs: [
+      'smart-hydraulic-lift-storage-bed',
+      'heritage-solid-wood-king-bed',
+      'cushioned-end-of-bed-ottoman-bench',
+      'classic-3-door-wooden-wardrobe-daraz'
+    ]
+  },
+  {
+    slug: 'nepali-wardrobe-daraz-buying-guide',
+    title: 'Wardrobe and Daraz Buying Guide in Nepal: Sliding vs Hinged Doors, Lockers and Moisture Protection',
+    metaTitle: 'Wardrobe (Daraz) Buying Guide in Nepal (2025) | Ashwi Furniture',
+    metaDescription: 'Find the right wooden wardrobe (daraz) in Kathmandu. Comparing 3-door hinged vs sliding wardrobes, internal safety lockers, and winter dampness prevention tips.',
+    publishedDate: '2025-02-22',
+    updatedDate: '2025-03-05',
+    readingTime: '9 min read',
+    category: 'Storage & Wardrobes',
+    heroImage: '/daraz.jpeg',
+    excerpt: 'A reliable wardrobe does more than hang shirts; it protects winter woolens from monsoon mildew and safeguards valuables in an internal locker. Here is our practical shopping guide for Nepali homes.',
+    author: 'Ashwi Interior Layout Consultants',
+    targetKeywords: [
+      'wardrobe price in nepal',
+      'daraz furniture kathmandu',
+      'sliding wardrobe nepal',
+      'wooden daraz price in kathmandu',
+      '3 door wardrobe design nepal',
+      'steel vs wooden daraz nepal'
+    ],
+    sections: [
+      {
+        id: 'sliding-vs-hinged-doors',
+        heading: 'Sliding Doors vs Hinged Swing Doors for Kathmandu Bedrooms',
+        content: [
+          'Room floor plan dictates whether sliding or hinged doors work best:',
+          'Hinged Doors: Open outwards by 90 to 180 degrees. They require at least 3 feet of clear walking clearance in front of the wardrobe so you can open doors without hitting your bed frame. The benefit is you can open all doors simultaneously for a complete panoramic view of your clothing.',
+          'Sliding Doors: Move sideways along floor and top tracks. Zero swing radius needed. Perfect for tighter modern rooms where the side of the bed sits just 2 feet away from the wardrobe front.'
+        ]
+      },
+      {
+        id: 'essential-internal-compartments-in-nepal',
+        heading: 'Nepali Wardrobe Anatomy: What Internal Layout Do You Actually Need?',
+        content: [
+          'Off-the-shelf foreign wardrobe designs often fail in Nepali households because they lack provisions for local clothing styles:',
+          'Long Hanging Rail: You need at least 48 to 54 inches of vertical clearance to hang traditional Kurti sets, Sarees, and long winter overcoats without folding.',
+          'Internal Metal Security Locker (Tijori / Locker Box): A built-in lockable drawer or mini-safe with an independent key mechanism for family gold, citizenship cards, land deed documents (lalpurja), and cash.',
+          'Deep Bottom Shelves: Sized to store winter quilts (sirak) and heavy blankets during the hot summer season.',
+          'Integrated Dressing Mirror: A full-length silver-backed mirror on the center door panel saves wall space and eliminates the need for an independent dressing table.'
+        ]
+      },
+      {
+        id: 'protecting-clothes-from-monsoon-mold',
+        heading: 'Protecting Clothes From Kathmandu Monsoon Dampness and Mold',
+        content: [
+          'Many brick houses in the valley lack exterior water barrier coatings, causing ground dampness to creep into outer walls. If your wardrobe backs directly against an external cold wall, clothes can develop white fungal spots during July and August.',
+          'Our Best Workshop Practices:',
+          '1. Always maintain a 2-inch air gap between the wardrobe back panel and the bedroom wall for cross ventilation.',
+          '2. Inspect the back sheet: Low-grade cardboard backing absorbs water and sags. We use calibrated moisture-resistant backing sheets.',
+          '3. Keep camphor balls (kapur) or reusable silica gel bags inside lower drawers to absorb excess humidity naturally.'
+        ]
+      },
+      {
+        id: 'hinges-and-roller-hardware',
+        heading: 'Hardware Quality: The Foundation of Your Daraz',
+        content: [
+          'Wardrobe bodies outlast their hardware if cheap fittings are used. Look for hydraulic soft-close concealed hinges (tested for 50,000 open-close movements) so doors never slam loudly.',
+          'For sliding wardrobes, ensure the rollers utilize sealed ball bearings and aluminum bottom tracks rather than plastic glides that jump the track when loaded with heavy winter wear.'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'What is the standard price of a good 3-door wooden daraz in Kathmandu?',
+        answer: 'A durable 3-door wardrobe built with moisture-resistant engineering and quality timber finishes generally ranges from Rs. 48,000 to Rs. 75,000, depending on internal drawer fittings and mirror integration.'
+      },
+      {
+        question: 'Can you customize the internal shelves and hanging sections?',
+        answer: 'Yes. At Ashwi Furniture, we customize hanging lengths, locker drawer positions, and outer finishes to match your room dimensions.'
+      },
+      {
+        question: 'Is delivery and bedroom setup included?',
+        answer: 'Yes, inside Kathmandu, Lalitpur, and Bhaktapur, delivery and full installation are completely free with 100% Payment After Delivery.'
+      }
+    ],
+    relatedProductSlugs: [
+      'classic-3-door-wooden-wardrobe-daraz',
+      'executive-wardrobe-with-integrated-dressing-mirror',
+      'contemporary-vanity-dressing-table',
+      'multi-tier-wooden-entryway-shoe-rack'
+    ]
+  },
+  {
+    slug: 'curved-modular-sofa-buying-guide-kathmandu',
+    title: 'Curved and Modular Sofa Buying Guide in Kathmandu: Fabrics, Foam Densities, and Room Flow',
+    metaTitle: 'Curved Sofa Buying Guide Kathmandu (2025) - Boucle, Foam & Sizing | Ashwi',
+    metaDescription: 'Complete guide to buying luxury curved bubble sofas and modular sectionals in Kathmandu. Foam densities (32D vs 40D), pet-friendly fabrics, and living room spacing.',
+    publishedDate: '2025-02-25',
+    updatedDate: '2025-03-08',
+    readingTime: '8 min read',
+    category: 'Living Room Guides',
+    heroImage: '/bubblesofa.png',
+    excerpt: 'Curved bubble sofas have taken modern Kathmandu apartments by storm. Learn how to pick resilient 32D foam, soil-resistant boucle or velvet, and ensure your living room maintains fluid walking lanes.',
+    author: 'Ashwi Living Room Design Studio',
+    targetKeywords: [
+      'sofa set price in nepal',
+      'curved sofa kathmandu',
+      'bubble sofa price nepal',
+      'l shape sofa nepal',
+      'modern sofa design kathmandu',
+      'boucle sofa kathmandu'
+    ],
+    sections: [
+      {
+        id: 'the-appeal-of-curved-sofas',
+        heading: 'Why Curved Sofas Are Transforming Kathmandu Living Rooms',
+        content: [
+          'For decades, standard living rooms in Nepal followed a rigid formula: one long 3-seater sofa backed against a wall, flanked by two square armchairs. While functional, this layout creates sharp corners and formal, boxy visual lines.',
+          'Curved sofas break this rigidity. Their sculptural, organic contours soften angular living spaces, draw people toward the center for easier conversations, and create a warm boutique lounge feeling even in standard apartment living rooms.'
+        ]
+      },
+      {
+        id: 'foam-density-32d-vs-40d',
+        heading: 'Foam Density Explained: 32D vs 40D vs Low-Grade Foam',
+        content: [
+          'The single biggest reason sofas begin sagging within 18 months is low-density foam (under 24D) loaded with chalk fillers. When testing a sofa, do not just check if it feels soft; check its rebound elasticity:',
+          '28D Foam: Adequate for backrest cushions where body weight pressure is low.',
+          '32D to 35D High Resilience (HR) Foam: The optimal balance of plush surface cushioning and firm core support for primary seat cushions in family homes.',
+          '40D HD Foam: Firm, commercial-grade longevity. Excellent for high-traffic reception areas and deep seating modular units.',
+          'At Ashwi Furniture, our curved bubble and sectional sofas incorporate multi-layered high-resilience foam paired with pocket springs and heavy-gauge S-spring webbing.'
+        ]
+      },
+      {
+        id: 'upholstery-fabrics-boucle-velvet-linen',
+        heading: 'Choosing Fabrics for Dusty Valley Conditions: Boucle vs Velvet vs Linen',
+        content: [
+          'Kathmandu dust (dhulo) and seasonal sunshine require deliberate fabric choices:',
+          'Textured Boucle: Trendy, cozy, and highly forgiving with dust because of its looped, multi-tonal fiber texture. Choose treated polyester-blend boucle for stain resistance.',
+          'Matte Velvet: Luxurious depth of color with tight woven pile. Pet hairs wipe off easily with a damp lint roller, and water droplets pool temporarily on the surface before absorbing.',
+          'Chenille / Linen Weave: Breathable during humid monsoon months and very gentle on skin. Highly recommended if your living room receives strong afternoon sunlight.'
+        ]
+      },
+      {
+        id: 'measuring-doorways-and-curves',
+        heading: 'Measuring Living Room Clearance and Doorways',
+        content: [
+          'Because curved sofas have non-linear depth (often 36 to 42 inches deep at the apex of the curve), standard doorways can pose a challenge.',
+          'Always verify your entrance door width and staircase turns. If your entryway is under 32 inches, our modular curved models (split into 2 interlocking pieces) click together securely inside your living room without damaging walls.'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'Are curved sofas harder to clean than traditional straight sofas?',
+        answer: 'Not when upholstered in performance fabrics. A weekly vacuum with a soft brush attachment and a damp cloth wipe for spot cleans keeps boucle and velvet in pristine condition.'
+      },
+      {
+        question: 'Can I choose custom fabric colors for my sofa?',
+        answer: 'Yes. We offer fabric swatch choices in cream, beige, olive green, charcoal, rust, and royal blue. Custom upholstery takes 5 to 10 days in our workshop.'
+      },
+      {
+        question: 'What happens if the sofa does not fit into my room upon delivery?',
+        answer: 'Because of our 100% Payment After Delivery policy, you carry zero financial risk. Our logistics team conducts pre-delivery dimension checks, and if access is physically impossible, you owe nothing.'
+      }
+    ],
+    relatedProductSlugs: [
+      'luxury-bubble-curved-sofa',
+      'royal-tufted-chesterfield-sofa',
+      'cloud-modular-sectional-sofa',
+      'cocoon-ergonomic-curved-sofa'
+    ]
+  },
+  {
+    slug: 'home-mandir-pooja-unit-vastu-guide-nepal',
+    title: 'Home Mandir and Pooja Unit Vastu Guide in Nepal: Direction, Materials and Shikhara Designs',
+    metaTitle: 'Home Mandir Vastu & Design Guide Nepal (2025) | Ashwi Furniture',
+    metaDescription: 'Vastu Shastra rules for placing wooden home mandirs in Nepali households: North-East Ishan Kona placement, solid Teak/Sisau timber, shikhara domes, and diya drawer design.',
+    publishedDate: '2025-02-28',
+    updatedDate: '2025-03-10',
+    readingTime: '7 min read',
+    category: 'Vastu & Mandir Guides',
+    heroImage: '/mandir_alone.png',
+    excerpt: 'Positioning your puja mandir properly invites positive energy, peace, and auspicious vibrations into your home. Here is our architectural and Vastu guide for Nepali families.',
+    author: 'Ashwi Traditional Artisans & Vastu Advisors',
+    targetKeywords: [
+      'wooden mandir for home nepal',
+      'pooja unit design kathmandu',
+      'mandir vastu direction nepal',
+      'puja mandir price in nepal',
+      'kaath ko mandir kathmandu',
+      'home temple design nepal'
+    ],
+    sections: [
+      {
+        id: 'vastu-direction-for-home-temples',
+        heading: 'Ideal Vastu Directions for Your Home Mandir (Ishan Kona)',
+        content: [
+          'According to Vastu Shastra, the North-East (ईशान कोण - Ishan Kona) is the supreme zone for setting up a family mandir. The North-East brings clarity, spiritual serenity, and prosperity because morning solar rays enter from this quadrant.',
+          'Alternative Orientations:',
+          'East: Excellent second choice. When praying, facing East promotes concentration and vitality.',
+          'North: Good for homes where North-East is unavailable; associated with Kubera (wealth).',
+          'Directions to Avoid: Never place your mandir in the South or South-West corner, directly below a staircase, or adjoining a bathroom wall.'
+        ]
+      },
+      {
+        id: 'auspicious-materials-solid-timber-vs-metal',
+        heading: 'Auspicious Materials: Why Solid Wood Is Enduring',
+        content: [
+          'Vastu texts highlight natural solid timber (specifically Teak, Sisau, or Sandalwood) as the purest material for housing deities. Real wood conducts warm sattvic energy and ages gracefully with daily incense and oil lamp rituals.',
+          'Avoid purchasing glass-only or cold metal temple structures for residential sanctums. Ensure the timber is seasoned so the carved pillars and arches never warp or crack over decades of family devotion.'
+        ]
+      },
+      {
+        id: 'traditional-architectural-elements',
+        heading: 'Essential Design Elements in a Traditional Nepali Pooja Unit',
+        content: [
+          'A thoughtful home mandir balances sacred architecture with practical daily worship needs:',
+          'Carved Shikhara & Kalash Dome: Symbolic of the sacred mountain peak, channeling positive vibrations downward into the sanctum.',
+          'Diya Extension Tray: A sliding brass or timber tray that pulls out below the sanctum. This provides a dedicated fireproof surface for burning camphor (kapur) and mustard oil butter lamps (diyo) without blackening the ceiling above.',
+          'Storage Cabinet for Puja Samagri: Deep lower drawers with quiet sliding channels to keep incense boxes (agarbatti), holy books (Gita, Chandi), brass bells, and cotton wicks organized away from sight.',
+          'Elevation Off the Ground: Idols should be placed at chest height so that deities stand at eye level whether the worshipper is seated on a puja aasan mat or standing.'
+        ]
+      },
+      {
+        id: 'care-and-cleaning-of-wooden-mandir',
+        heading: 'Caring for Carved Wood Around Oil Lamps and Smoke',
+        content: [
+          'Daily burning of oil lamps and dhoop can leave oil vapor residues on carved wooden arches over time.',
+          'Clean your wooden mandir once a month with a soft cotton cloth lightly dampened with lemon oil or diluted sandalwood water. Avoid harsh synthetic chemical cleaners or abrasive scouring pads that strip the warm lacquer finish.'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'Which wood is most auspicious for a home mandir in Nepal?',
+        answer: 'Teak (Sagwan) and seasoned Sisau (Sheesham) are the most recommended timbers. Both offer exceptional longevity and carve beautifully into traditional shikhara spires and peacock motifs.'
+      },
+      {
+        question: 'Can the home mandir be mounted on the wall or should it sit on the floor?',
+        answer: 'Both work well. For smaller apartments, a wall-mounted wooden mandir saves floor space while keeping the deities at eye level. For larger homes, a floor-standing cabinet mandir with storage drawers is ideal.'
+      },
+      {
+        question: 'Does Ashwi Furniture offer custom sizes according to room dimensions?',
+        answer: 'Yes. Our woodcarvers can adjust the height, width, number of shelves, and drawer layouts according to your exact room measurements and Vastu preferences.'
+      }
+    ],
+    relatedProductSlugs: [
+      'handcrafted-sacred-wooden-home-mandir',
+      'grand-family-puja-mandir-with-storage-cabinet',
+      'heritage-solid-wood-king-bed',
+      'minimalist-solid-wood-center-tea-table'
+    ]
+  }
+];

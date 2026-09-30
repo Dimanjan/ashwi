@@ -70,6 +70,14 @@ Ashwi Furniture (अश्वी फर्निचर) serves customers across 
 - **Warranty**: 5 to 10 years structural frame warranty on all solid wood furniture.
 - **Direct Orders & Inquiries**: Call or WhatsApp `+977 986-0479751`.
 
+## Practical Guides & Buying Advice (Nepal Knowledge Hub)
+- [Furniture Guides Hub](https://www.ashwifurniture.com/guides): Directory of in-depth furniture buying, sizing, and material guides for Kathmandu Valley homes.
+- [Best Wood for Furniture in Nepal](https://www.ashwifurniture.com/guides/best-wood-for-furniture-in-nepal): Technical breakdown of Sisau (Sheesham), Sal (Sakhuwa), Teak (Sagwan), and engineered boards for Kathmandu humidity and termites.
+- [Hydraulic Storage Bed Buying Guide](https://www.ashwifurniture.com/guides/hydraulic-storage-bed-buying-guide-nepal): Gas piston ratings (100kg vs 150kg), mattress dimensions (King vs Queen), and staircase access in Kathmandu.
+- [Nepali Wardrobe (Daraz) Buying Guide](https://www.ashwifurniture.com/guides/nepali-wardrobe-daraz-buying-guide): Sliding vs hinged swing doors, internal security locker (tijori), and monsoon dampness protection.
+- [Curved & Modular Sofa Buying Guide](https://www.ashwifurniture.com/guides/curved-modular-sofa-buying-guide-kathmandu): Foam density standards (32D HR vs 40D), dust-resistant boucle/velvet, and doorway measurements.
+- [Home Mandir & Pooja Unit Vastu Guide](https://www.ashwifurniture.com/guides/home-mandir-pooja-unit-vastu-guide-nepal): North-East Ishan Kona placement, solid timber carvings, shikhara spires, and fireproof diya trays.
+
 ## Useful Links
 - [Full Machine-Readable Catalog (JSON)](https://www.ashwifurniture.com/catalog.json)
 - [Complete Product Catalog (Web)](https://www.ashwifurniture.com/products)

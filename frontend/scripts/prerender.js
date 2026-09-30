@@ -236,4 +236,178 @@ for (const cat of categories) {
 }
 
 console.log(`✅ Pre-rendered ${renderedCategories} category landing pages.`);
+
+// 3. Pre-render Guides Hub & Articles
+const guidesPath = path.join(rootDir, 'public', 'guides.json');
+if (fs.existsSync(guidesPath)) {
+  const guidesData = JSON.parse(fs.readFileSync(guidesPath, 'utf8'));
+  const guides = guidesData.guides || [];
+  console.log(`🚀 Starting static pre-rendering for ${guides.length} buying guides...`);
+
+  // Guides Hub Index
+  const guidesHubDir = path.join(buildDir, 'guides');
+  fs.mkdirSync(guidesHubDir, { recursive: true });
+
+  const hubUrl = 'https://www.ashwifurniture.com/guides';
+  const hubTitle = 'Furniture Buying & Care Guides Nepal | Ashwi Furniture';
+  const hubDesc = 'Practical furniture guides for Kathmandu Valley homes. Learn about Sisau vs Sal wood, hydraulic storage beds, sliding wardrobes, curved sofas, and home mandir Vastu.';
+
+  let hubHtml = template;
+  hubHtml = replaceTitle(hubHtml, hubTitle);
+  hubHtml = replaceMeta(hubHtml, 'description', hubDesc, 'name');
+  hubHtml = replaceCanonical(hubHtml, hubUrl);
+  hubHtml = replaceMeta(hubHtml, 'og:title', hubTitle);
+  hubHtml = replaceMeta(hubHtml, 'og:description', hubDesc);
+  hubHtml = replaceMeta(hubHtml, 'og:url', hubUrl);
+
+  const hubContent = `
+    <header style="padding: 16px 24px; border-bottom: 1px solid #e2e8f0; font-family: system-ui, sans-serif;">
+      <nav>
+        <a href="/" style="font-weight: bold; color: #1e293b; text-decoration: none;">Ashwi Furniture</a> &gt; 
+        <span style="color: #64748b;">Guides & Resources</span>
+      </nav>
+    </header>
+    <main style="max-width: 1100px; margin: 0 auto; padding: 24px; font-family: system-ui, sans-serif; line-height: 1.6;">
+      <h1 style="font-size: 2.2rem; color: #0f172a; margin-top: 0;">Furniture Buying & Care Guides for Nepali Homes</h1>
+      <p style="font-size: 1.1rem; color: #475569; margin-bottom: 32px;">${hubDesc}</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
+        ${guides.map(g => `
+          <article style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; background: #ffffff;">
+            <span style="background: #f3e8ff; color: #7c3aed; font-size: 0.75rem; font-weight: bold; padding: 4px 8px; border-radius: 4px; text-transform: uppercase;">${g.category}</span>
+            <h2 style="font-size: 1.25rem; margin: 12px 0 8px;"><a href="/guides/${g.slug}" style="color: #0f172a; text-decoration: none;">${g.title}</a></h2>
+            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 16px;">${g.excerpt}</p>
+            <a href="/guides/${g.slug}" style="display: inline-block; background: #7c3aed; color: #ffffff; font-weight: 600; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9rem;">Read Full Guide</a>
+          </article>
+        `).join('')}
+      </div>
+    </main>
+  `;
+
+  hubHtml = replaceRoot(hubHtml, hubContent);
+  fs.writeFileSync(path.join(guidesHubDir, 'index.html'), hubHtml, 'utf8');
+  fs.writeFileSync(path.join(buildDir, 'guides.html'), hubHtml, 'utf8');
+
+  // Pre-render Individual Guide Pages
+  let renderedGuides = 0;
+  for (const g of guides) {
+    const targetDir = path.join(buildDir, 'guides', g.slug);
+    fs.mkdirSync(targetDir, { recursive: true });
+
+    const guideUrl = `https://www.ashwifurniture.com/guides/${g.slug}`;
+    const guideImg = `https://www.ashwifurniture.com${g.heroImage}`;
+
+    let html = template;
+    html = replaceTitle(html, g.metaTitle);
+    html = replaceMeta(html, 'description', g.metaDescription, 'name');
+    html = replaceMeta(html, 'keywords', (g.targetKeywords || []).join(', '), 'name');
+    html = replaceCanonical(html, guideUrl);
+
+    // Open Graph
+    html = replaceMeta(html, 'og:title', g.metaTitle);
+    html = replaceMeta(html, 'og:description', g.metaDescription);
+    html = replaceMeta(html, 'og:url', guideUrl);
+    html = replaceMeta(html, 'og:image', guideImg);
+    html = replaceMeta(html, 'og:image:secure_url', guideImg);
+    html = replaceMeta(html, 'og:type', 'article');
+
+    // Twitter
+    html = replaceMeta(html, 'twitter:card', 'summary_large_image', 'name');
+    html = replaceMeta(html, 'twitter:title', g.metaTitle, 'name');
+    html = replaceMeta(html, 'twitter:description', g.metaDescription, 'name');
+    html = replaceMeta(html, 'twitter:image', guideImg, 'name');
+
+    // Article & FAQ Schema
+    const articleSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: g.title,
+      description: g.metaDescription,
+      image: guideImg,
+      datePublished: g.publishedDate,
+      dateModified: g.updatedDate,
+      author: {
+        '@type': 'Organization',
+        name: g.author,
+        url: 'https://www.ashwifurniture.com'
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Ashwi Furniture',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.ashwifurniture.com/logo512.png'
+        }
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': guideUrl
+      }
+    };
+    html = injectSchema(html, articleSchema);
+
+    if (g.faqs && g.faqs.length > 0) {
+      const faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: g.faqs.map(f => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: f.answer
+          }
+        }))
+      };
+      html = injectSchema(html, faqSchema);
+    }
+
+    const guideContent = `
+      <header style="padding: 16px 24px; border-bottom: 1px solid #e2e8f0; font-family: system-ui, sans-serif;">
+        <nav>
+          <a href="/" style="font-weight: bold; color: #1e293b; text-decoration: none;">Ashwi Furniture</a> &gt; 
+          <a href="/guides" style="color: #7c3aed; text-decoration: none;">Guides</a> &gt; 
+          <span style="color: #64748b;">${g.title}</span>
+        </nav>
+      </header>
+      <main style="max-width: 900px; margin: 0 auto; padding: 24px; font-family: system-ui, sans-serif; line-height: 1.7;">
+        <span style="background: #f3e8ff; color: #7c3aed; font-size: 0.8rem; font-weight: bold; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">${g.category}</span>
+        <h1 style="font-size: 2.3rem; margin: 16px 0 12px; color: #0f172a; line-height: 1.25;">${g.title}</h1>
+        <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 24px;">By ${g.author} | Updated on ${g.updatedDate} | ${g.readingTime}</p>
+        <p style="font-size: 1.15rem; color: #334155; font-weight: 500; background: #f8fafc; padding: 16px; border-left: 4px solid #7c3aed; border-radius: 4px; margin-bottom: 32px;">
+          ${g.excerpt}
+        </p>
+        <img src="${g.heroImage}" alt="${g.title}" style="width: 100%; max-height: 460px; object-fit: cover; border-radius: 12px; margin-bottom: 32px;" />
+        ${(g.sections || []).map(sec => `
+          <section id="${sec.id}" style="margin-bottom: 36px;">
+            <h2 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 16px; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px;">${sec.heading}</h2>
+            ${sec.content.map(p => `<p style="color: #334155; margin-bottom: 14px; font-size: 1.05rem;">${p}</p>`).join('')}
+          </section>
+        `).join('')}
+        ${g.faqs && g.faqs.length > 0 ? `
+          <section style="margin-top: 48px; padding-top: 24px; border-top: 2px solid #e2e8f0;">
+            <h2 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 20px;">Frequently Asked Questions</h2>
+            ${g.faqs.map(f => `
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+                <h3 style="margin-top: 0; font-size: 1.1rem; color: #1e293b;">${f.question}</h3>
+                <p style="margin-bottom: 0; color: #475569;">${f.answer}</p>
+              </div>
+            `).join('')}
+          </section>
+        ` : ''}
+        <div style="margin-top: 40px; padding: 20px; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px;">
+          <p style="margin: 0; color: #065f46; font-weight: 500;">
+            ✓ <strong>100% Payment After Delivery:</strong> We deliver and assemble across Kathmandu, Lalitpur, and Bhaktapur. Inspect your furniture before paying. For custom sizing or inquiries, call or WhatsApp <strong>9860479751</strong>.
+          </p>
+        </div>
+      </main>
+    `;
+
+    html = replaceRoot(html, guideContent);
+    fs.writeFileSync(path.join(targetDir, 'index.html'), html, 'utf8');
+    fs.writeFileSync(path.join(buildDir, 'guides', `${g.slug}.html`), html, 'utf8');
+    renderedGuides++;
+  }
+  console.log(`✅ Pre-rendered ${renderedGuides} individual guide articles.`);
+}
+
 console.log('🎉 Static pre-rendering successfully completed!');

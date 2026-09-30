@@ -9,6 +9,8 @@ import ProductDetailPage from './pages/ProductDetailPage';
 import CategoryPage from './pages/CategoryPage';
 import SubcategoryPage from './pages/SubcategoryPage';
 import SearchPage from './pages/SearchPage';
+import GuidesIndexPage from './pages/GuidesIndexPage';
+import GuideDetailPage from './pages/GuideDetailPage';
 import TechnologyPage from './pages/TechnologyPage';
 import AnalyticsPage from './pages/AnalyticsPage';
 import { trackPageView } from './utils/telemetry';
@@ -39,6 +41,8 @@ function App() {
               <Route path="/products/:slug" element={<ProductDetailPage />} />
               <Route path="/category/:slug" element={<CategoryPage />} />
               <Route path="/subcategory/:slug" element={<SubcategoryPage />} />
+              <Route path="/guides" element={<GuidesIndexPage />} />
+              <Route path="/guides/:slug" element={<GuideDetailPage />} />
               <Route path="/search" element={<SearchPage />} />
               <Route path="/technology" element={<TechnologyPage />} />
               <Route path="/admin/analytics" element={<AnalyticsPage />} />

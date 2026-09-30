@@ -122,6 +122,15 @@ const Header: React.FC = () => {
                 </Link>
               </React.Fragment>
             ))}
+
+            <span className="text-gray-300 text-xs select-none mx-0.5">·</span>
+
+            <Link
+              to="/guides"
+              className="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-primary-600 hover:text-primary-700 hover:bg-primary-50 rounded-md transition-colors whitespace-nowrap"
+            >
+              Guides
+            </Link>
           </nav>
 
           {/* Search and Direct Actions */}
@@ -197,6 +206,14 @@ const Header: React.FC = () => {
                   {category.name}
                 </Link>
               ))}
+              <Link
+                to="/guides"
+                className="flex items-center gap-2 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-primary-500"></span>
+                Furniture Guides
+              </Link>
 
               {/* Mobile Quick Contact Bar */}
               <div className="pt-2.5 mt-2 border-t border-gray-100 flex gap-2">

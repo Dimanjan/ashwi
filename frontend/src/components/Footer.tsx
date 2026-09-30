@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1 md:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
               <picture>
                 <source srcSet="/ashwi-logo-white.webp" type="image/webp" />
@@ -26,9 +26,8 @@ const Footer: React.FC = () => {
                 <span className="text-xs text-gray-400 mt-1">Kathmandu, Nepal</span>
               </div>
             </div>
-            <p className="text-gray-300 mb-4 max-w-md">
-              We offer beautiful furniture with high finishing. We take payment only after delivery.
-              Page · Furniture · Furniture store · Interior Design Studio
+            <p className="text-gray-300 text-xs sm:text-sm mb-4 leading-relaxed">
+              Handcrafted solid timber and designer furniture with 100% Payment After Delivery across Kathmandu Valley.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -75,31 +74,65 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-gray-200 mb-4">Categories</h3>
+            <ul className="space-y-2 text-xs sm:text-sm">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-white transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/products" className="text-gray-300 hover:text-white transition-colors">
+                <Link to="/products" className="text-gray-400 hover:text-white transition-colors">
                   All Products
                 </Link>
               </li>
               <li>
-                <Link to="/category/living-room" className="text-gray-300 hover:text-white transition-colors">
+                <Link to="/category/living-room" className="text-gray-400 hover:text-white transition-colors">
                   Living Room
                 </Link>
               </li>
               <li>
-                <Link to="/category/bedroom" className="text-gray-300 hover:text-white transition-colors">
+                <Link to="/category/bedroom" className="text-gray-400 hover:text-white transition-colors">
                   Bedroom
                 </Link>
               </li>
               <li>
-                <Link to="/category/dining-room" className="text-gray-300 hover:text-white transition-colors">
+                <Link to="/category/dining-room" className="text-gray-400 hover:text-white transition-colors">
                   Dining Room
+                </Link>
+              </li>
+              <li>
+                <Link to="/category/mandir" className="text-gray-400 hover:text-white transition-colors">
+                  Wooden Mandirs
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Guides & Buying Resources */}
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-primary-400 mb-4">
+              <Link to="/guides" className="hover:underline">Buying Guides</Link>
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm">
+              <li>
+                <Link to="/guides/best-wood-for-furniture-in-nepal" className="text-gray-400 hover:text-white transition-colors">
+                  Best Wood for Furniture Nepal
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/hydraulic-storage-bed-buying-guide-nepal" className="text-gray-400 hover:text-white transition-colors">
+                  Hydraulic Bed Buying Guide
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/nepali-wardrobe-daraz-buying-guide" className="text-gray-400 hover:text-white transition-colors">
+                  Wardrobe & Daraz Guide
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/curved-modular-sofa-buying-guide-kathmandu" className="text-gray-400 hover:text-white transition-colors">
+                  Curved & Bubble Sofa Guide
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/home-mandir-pooja-unit-vastu-guide-nepal" className="text-gray-400 hover:text-white transition-colors">
+                  Mandir Vastu & Design Guide
                 </Link>
               </li>
             </ul>
@@ -107,10 +140,10 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <div className="space-y-3">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-gray-200 mb-4">Contact Us</h3>
+            <div className="space-y-3 text-xs sm:text-sm">
               <div className="flex items-center space-x-3">
-                <PhoneIcon className="h-5 w-5 text-gray-400" />
+                <PhoneIcon className="h-5 w-5 text-primary-400 shrink-0" />
                 <a 
                   href="tel:+9779860479751" 
                   onClick={() => trackEvent('phone_call_click', { location: 'footer' })}
@@ -120,11 +153,11 @@ const Footer: React.FC = () => {
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <EnvelopeIcon className="h-5 w-5 text-gray-400" />
+                <EnvelopeIcon className="h-5 w-5 text-primary-400 shrink-0" />
                 <span className="text-gray-300">info@ashwifurniture.com.np</span>
               </div>
               <div className="flex items-start space-x-3">
-                <MapPinIcon className="h-5 w-5 text-gray-400 mt-0.5" />
+                <MapPinIcon className="h-5 w-5 text-primary-400 mt-0.5 shrink-0" />
                 <span className="text-gray-300">
                   Kathmandu, Nepal
                 </span>
